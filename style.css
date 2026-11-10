@@ -371,7 +371,7 @@ img.img-fallback { opacity: 0; }
 [data-theme="dark"] .icon-moon { display: none; }
 .header-cta { padding: 11px 22px; }
 
-.menu-toggle { display: none; flex-direction: column; gap: 5px; }
+.menu-toggle { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
 .menu-toggle span { width: 18px; height: 2px; background: currentColor; border-radius: 2px; transition: transform .3s, opacity .3s; }
 .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
@@ -793,14 +793,30 @@ img.img-fallback { opacity: 0; }
   .slides { min-height: 420px; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
 }
+@media (max-width: 640px) {
+  .header-cta { display: none; }
+}
 
 /* very small phones – header & footer logo still shrink together */
 @media (max-width: 340px) {
-  :root { --logo-h: 40px; }
-  .site-header .brand-name { font-size: 1.05rem !important; }
-  .header-inner { gap: 6px; }
-  .icon-btn { width: 32px; height: 32px; }
-  .site-header .brand-tagline { max-width: 96px; }
+  :root { --logo-h: 32px; }
+  .site-header .brand { gap: 4px; }
+  .site-header .brand-logo-wrap { height: 40px; }
+  .site-header .brand-logo { height: 32px; }
+  .site-header .brand-name { font-size: .95rem !important; }
+  .site-header .brand-tagline { display: none; }
+  .header-inner { gap: 4px; }
+  .header-actions { gap: 2px; }
+  .icon-btn { width: 28px; height: 28px; }
+}
+@media (max-width: 260px) {
+  .site-header .brand { gap: 2px; }
+  .header-inner { gap: 2px; }
+  .header-actions { gap: 0; }
+  .icon-btn { width: 26px; height: 26px; }
+}
+@media (max-width: 240px) {
+  .icon-btn { width: 24px; height: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
