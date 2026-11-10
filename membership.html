@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership Plans | Emeravita Health Store</title>
+  <meta name="description" content="Emeravita membership: save up to 20% on medicines, unlimited free delivery and free pharmacist consultations. Wellness, polished like a gem." />
+  <link rel="icon" type="image/png" href="assets/images/emeravita-icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/emeravita-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Shared site styles: header, footer, theme colours, buttons -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem("careplus-theme");
+        root.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      } catch (e) {
+        root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Membership page styles -->
+  <link rel="stylesheet" href="membership.css" />
+</head>
+<body class="membership-body">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+        <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+        <span class="brand-text">
+          <span class="brand-name">Emeravita</span>
+          <span class="brand-tagline">Wellness, polished like a gem.</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link active" aria-current="page">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="rtlToggle" aria-label="Toggle text direction (RTL / LTR)" title="Switch LTR / RTL">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h14m0 0l-4-4m4 4l-4 4M20 16H6m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <!-- The ONLY header CTA -->
+        <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icon sprite used on this page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mb-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="mb-dash" viewBox="0 0 24 24"><path d="M6 12h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="mb-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="mb-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="currentColor"/></symbol>
+    <symbol id="mb-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <main class="mb-page">
+
+    <!-- ================= 1. HERO – framed photo panel + 3D fanned member cards (full viewport) ================= -->
+    <section class="mb-hero" id="mb-hero">
+      <div class="mb-frame">
+        <div class="mb-frame-bg">
+          <img src="https://images.pexels.com/photos/30012175/pexels-photo-30012175.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Happy family holding their newborn baby" onerror="this.classList.add('img-fallback')" />
+        </div>
+        <span class="mb-frame-shade" aria-hidden="true"></span>
+        <span class="mb-sparkle mb-sp1" aria-hidden="true"></span>
+        <span class="mb-sparkle mb-sp2" aria-hidden="true"></span>
+        <span class="mb-sparkle mb-sp3" aria-hidden="true"></span>
+
+        <div class="mb-hero-grid">
+          <div class="mb-hero-copy">
+            <span class="mb-chip">
+              <svg width="16" height="16" aria-hidden="true"><use href="#mb-star"/></svg>
+              Emeravita Membership
+            </span>
+            <h1 class="mb-hero-title">
+              <span class="mb-reveal-text">Care that</span>
+              <span class="mb-reveal-text">pays you back,</span>
+              <span class="mb-reveal-text"><em>every month.</em></span>
+            </h1>
+            <p class="mb-hero-text">Save up to 20% on medicines, get unlimited free delivery and talk to a pharmacist whenever you need. Plans start at ₹0.</p>
+            <div class="mb-hero-actions">
+              <a href="#mb-plans" class="btn btn-primary">Compare Plans
+                <svg class="arrow" width="18" height="18"><use href="#mb-arrow"/></svg>
+              </a>
+              <a href="login.html" class="btn btn-secondary">I'm Already a Member</a>
+            </div>
+            <div class="mb-hero-proof">
+              <div class="mb-proof-num"><strong><span class="mb-count" data-target="25000">0</span>+</strong><span>active members</span></div>
+              <div class="mb-proof-sep" aria-hidden="true"></div>
+              <div class="mb-proof-num"><strong>₹<span class="mb-count" data-target="1800">0</span></strong><span>avg. yearly saving</span></div>
+            </div>
+          </div>
+
+          <div class="mb-deck-wrap" id="mbDeckWrap">
+            <div class="mb-deck" id="mbDeck" aria-label="Emeravita membership cards">
+              <div class="mb-card mb-card-basic">
+                <div class="mb-card-top"><img src="assets/images/emeravita-icon.png" alt="" class="mb-card-logo" /><span>Basic</span></div>
+                <span class="mb-card-chip" aria-hidden="true"></span>
+                <p class="mb-card-no">ZEN 0042 1180 5521</p>
+                <div class="mb-card-bottom"><span>Member since 2026</span><b>5% OFF</b></div>
+              </div>
+              <div class="mb-card mb-card-family">
+                <div class="mb-card-top"><img src="assets/images/emeravita-icon.png" alt="" class="mb-card-logo" /><span>Family</span></div>
+                <span class="mb-card-chip" aria-hidden="true"></span>
+                <p class="mb-card-no">ZEN 7731 4402 0098</p>
+                <div class="mb-card-bottom"><span>Up to 5 members</span><b>20% OFF</b></div>
+              </div>
+              <div class="mb-card mb-card-plus">
+                <div class="mb-card-top"><img src="assets/images/emeravita-icon.png" alt="" class="mb-card-logo" /><span>Emeravita</span></div>
+                <span class="mb-card-chip" aria-hidden="true"></span>
+                <p class="mb-card-no">ZEN 2210 9934 6617</p>
+                <div class="mb-card-bottom"><span>Most popular</span><b>15% OFF</b></div>
+                <span class="mb-card-shine" aria-hidden="true"></span>
+              </div>
+            </div>
+            <p class="mb-deck-hint">Hover the cards to fan them out</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. BENEFITS ================= -->
+    <section class="mb-section mb-benefits" id="mb-benefits">
+      <div class="container">
+        <header class="mb-head mb-reveal" data-mb="up">
+          <span class="mb-tag">Member Benefits</span>
+          <h2 class="mb-h2">More than a discount card</h2>
+          <p>Every plan is built around one idea: making it easier and calmer to look after your health.</p>
+        </header>
+
+        <div class="mb-bento">
+          <figure class="mb-bento-img mb-reveal" data-mb="zoom">
+            <img src="https://images.pexels.com/photos/6802935/pexels-photo-6802935.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Woman meditating calmly at home" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <figcaption>
+              <strong>Feel your peace</strong>
+              <span>Members spend less time worrying about refills.</span>
+            </figcaption>
+          </figure>
+
+          <article class="mb-benefit mb-reveal" data-mb="up">
+            <span class="mb-b-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg></span>
+            <h3>Up to 20% off</h3>
+            <p>On medicines, vitamins and personal care, every single order.</p>
+          </article>
+          <article class="mb-benefit mb-reveal" data-mb="up">
+            <span class="mb-b-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <h3>Free delivery</h3>
+            <p>Unlimited free same-day delivery with no minimum order.</p>
+          </article>
+          <article class="mb-benefit mb-reveal" data-mb="up">
+            <span class="mb-b-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <h3>Pharmacist on call</h3>
+            <p>Free consultations by chat or phone, 7 days a week.</p>
+          </article>
+          <article class="mb-benefit mb-reveal" data-mb="up">
+            <span class="mb-b-icon"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 9v4l2.5 2.5M9 2h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <h3>Refill reminders</h3>
+            <p>Never run out. We remind you a few days before you need it.</p>
+          </article>
+          <article class="mb-benefit mb-reveal" data-mb="up">
+            <span class="mb-b-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.6-9.5 9-9.5 9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 12h3l1.5-2.5L13 14l1.5-2H17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Yearly health check</h3>
+            <p>A free basic health check-up for Family plan members.</p>
+          </article>
+          <article class="mb-benefit mb-reveal" data-mb="up">
+            <span class="mb-b-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3>Priority dispatch</h3>
+            <p>Your orders are packed first and reach you faster.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. PLANS + BILLING TOGGLE ================= -->
+    <section class="mb-section mb-plans mb-tint" id="mb-plans">
+      <div class="container">
+        <header class="mb-head mb-reveal" data-mb="up">
+          <span class="mb-tag">Membership Plans</span>
+          <h2 class="mb-h2">Pick the plan that fits your home</h2>
+          <p>Switch or cancel any time. Pay yearly and get two months free.</p>
+        </header>
+
+        <div class="mb-billing mb-reveal" data-mb="up">
+          <span class="mb-bill-label is-on" id="mbLblMonthly">Monthly</span>
+          <button type="button" class="mb-switch" id="mbBilling" role="switch" aria-checked="false" aria-label="Switch to yearly billing"><span></span></button>
+          <span class="mb-bill-label" id="mbLblYearly">Yearly <em>2 months free</em></span>
+        </div>
+
+        <div class="mb-plan-grid">
+          <article class="mb-plan mb-reveal" data-mb="rise">
+            <div class="mb-plan-img">
+              <img src="https://images.pexels.com/photos/34423732/pexels-photo-34423732.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Smiling man in a yellow kurta" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="mb-plan-for">For individuals</span>
+            </div>
+            <div class="mb-plan-body">
+              <h3>Basic</h3>
+              <p class="mb-price"><span class="mb-cur">₹</span><span class="mb-amt" data-monthly="0" data-yearly="0">0</span><span class="mb-per">/month</span></p>
+              <ul>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>5% off on medicines</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Free delivery above ₹499</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Refill reminders</li>
+                <li class="is-off"><svg width="18" height="18"><use href="#mb-dash"/></svg>Pharmacist consultations</li>
+              </ul>
+              <a href="login.html" class="btn btn-secondary">Start Free</a>
+            </div>
+          </article>
+
+          <article class="mb-plan mb-plan-hot mb-reveal" data-mb="rise">
+            <span class="mb-plan-ribbon">Most Popular</span>
+            <div class="mb-plan-img">
+              <img src="https://images.pexels.com/photos/7477750/pexels-photo-7477750.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Smiling senior couple embracing" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="mb-plan-for">For couples</span>
+            </div>
+            <div class="mb-plan-body">
+              <h3>Emeravita</h3>
+              <p class="mb-price"><span class="mb-cur">₹</span><span class="mb-amt" data-monthly="149" data-yearly="1490">149</span><span class="mb-per">/month</span></p>
+              <ul>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>15% off on medicines</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Unlimited free delivery</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Monthly pharmacist consult</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Priority dispatch</li>
+              </ul>
+              <a href="login.html" class="btn btn-primary">Choose Emeravita</a>
+            </div>
+          </article>
+
+          <article class="mb-plan mb-reveal" data-mb="rise">
+            <div class="mb-plan-img">
+              <img src="https://images.pexels.com/photos/30012187/pexels-photo-30012187.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Indian parents with their newborn wrapped in yellow" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="mb-plan-for">For families</span>
+            </div>
+            <div class="mb-plan-body">
+              <h3>Family</h3>
+              <p class="mb-price"><span class="mb-cur">₹</span><span class="mb-amt" data-monthly="299" data-yearly="2990">299</span><span class="mb-per">/month</span></p>
+              <ul>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>20% off for up to 5 members</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Unlimited free delivery</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Unlimited consultations</li>
+                <li><svg width="18" height="18"><use href="#mb-check"/></svg>Free yearly health check</li>
+              </ul>
+              <a href="login.html" class="btn btn-secondary">Choose Family</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. COMPARE PLANS ================= -->
+    <section class="mb-section mb-compare" id="mb-compare">
+      <div class="container mb-compare-grid">
+        <aside class="mb-compare-aside mb-reveal" data-mb="side-a">
+          <span class="mb-tag">Side by Side</span>
+          <h2 class="mb-h2">Compare every benefit</h2>
+          <p>See exactly what each plan includes before you decide.</p>
+          <div class="mb-compare-img">
+            <img src="https://images.pexels.com/photos/4307663/pexels-photo-4307663.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Smiling man ordering on his phone at home" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="mb-compare-note">Order in 2 taps from the Emeravita app</span>
+          </div>
+        </aside>
+
+        <div class="mb-table-wrap mb-reveal" data-mb="side-b">
+          <table class="mb-table">
+            <thead>
+              <tr>
+                <th scope="col">Benefit</th>
+                <th scope="col">Basic</th>
+                <th scope="col" class="mb-col-hot">Emeravita</th>
+                <th scope="col">Family</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Medicine discount</th><td>5%</td><td class="mb-col-hot">15%</td><td>20%</td></tr>
+              <tr><th scope="row">Members covered</th><td>1</td><td class="mb-col-hot">2</td><td>Up to 5</td></tr>
+              <tr><th scope="row">Free delivery</th><td>Above ₹499</td><td class="mb-col-hot">Unlimited</td><td>Unlimited</td></tr>
+              <tr><th scope="row">Pharmacist consults</th><td><svg width="18" height="18" class="mb-no" aria-label="No"><use href="#mb-dash"/></svg></td><td class="mb-col-hot">1 / month</td><td>Unlimited</td></tr>
+              <tr><th scope="row">Refill reminders</th><td><svg width="18" height="18" class="mb-yes" aria-label="Yes"><use href="#mb-check"/></svg></td><td class="mb-col-hot"><svg width="18" height="18" class="mb-yes" aria-label="Yes"><use href="#mb-check"/></svg></td><td><svg width="18" height="18" class="mb-yes" aria-label="Yes"><use href="#mb-check"/></svg></td></tr>
+              <tr><th scope="row">Priority dispatch</th><td><svg width="18" height="18" class="mb-no" aria-label="No"><use href="#mb-dash"/></svg></td><td class="mb-col-hot"><svg width="18" height="18" class="mb-yes" aria-label="Yes"><use href="#mb-check"/></svg></td><td><svg width="18" height="18" class="mb-yes" aria-label="Yes"><use href="#mb-check"/></svg></td></tr>
+              <tr><th scope="row">Yearly health check</th><td><svg width="18" height="18" class="mb-no" aria-label="No"><use href="#mb-dash"/></svg></td><td class="mb-col-hot"><svg width="18" height="18" class="mb-no" aria-label="No"><use href="#mb-dash"/></svg></td><td><svg width="18" height="18" class="mb-yes" aria-label="Yes"><use href="#mb-check"/></svg></td></tr>
+              <tr><th scope="row">Birthday bonus points</th><td>100</td><td class="mb-col-hot">300</td><td>500</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. HOW IT WORKS ================= -->
+    <section class="mb-section mb-how mb-tint" id="mb-how">
+      <div class="container">
+        <header class="mb-head mb-reveal" data-mb="up">
+          <span class="mb-tag">How It Works</span>
+          <h2 class="mb-h2">Start saving in three simple steps</h2>
+        </header>
+
+        <div class="mb-steps">
+          <svg class="mb-steps-line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path id="mbLine" d="M0 20 Q 250 -10 500 20 T 1000 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="8 10"/></svg>
+          <div class="mb-step mb-reveal" data-mb="up">
+            <span class="mb-step-num">1</span>
+            <h3>Choose a plan</h3>
+            <p>Pick Basic, Emeravita or Family. Basic is free forever.</p>
+          </div>
+          <div class="mb-step mb-reveal" data-mb="up">
+            <span class="mb-step-num">2</span>
+            <h3>Create your account</h3>
+            <p>Sign up in a minute and add family members to your plan.</p>
+          </div>
+          <div class="mb-step mb-reveal" data-mb="up">
+            <span class="mb-step-num">3</span>
+            <h3>Order &amp; save</h3>
+            <p>Your discount and free delivery apply automatically at checkout.</p>
+          </div>
+        </div>
+
+        <div class="mb-how-banner mb-reveal" data-mb="zoom">
+          <img src="https://images.pexels.com/photos/6682773/pexels-photo-6682773.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Delivery partner bringing a parcel to a customer's door" loading="lazy" onerror="this.classList.add('img-fallback')" class="mb-parallax" />
+          <div class="mb-how-banner-copy">
+            <strong>Member orders arrive first.</strong>
+            <span>Average member delivery time: 2 hrs 10 min</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. MEMBER STORIES (3D stacked carousel) ================= -->
+    <section class="mb-section mb-stories" id="mb-stories">
+      <div class="container">
+        <header class="mb-head mb-reveal" data-mb="up">
+          <span class="mb-tag">Member Stories</span>
+          <h2 class="mb-h2">Families who found their balance</h2>
+        </header>
+
+        <div class="mb-stack mb-reveal" data-mb="zoom" id="mbStack">
+          <div class="mb-stack-stage" id="mbStage">
+          <article class="mb-story">
+            <div class="mb-story-photo"><img src="https://images.pexels.com/photos/8317680/pexels-photo-8317680.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Senior couple smiling at each other" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="mb-story-body">
+              <div class="mb-stars" aria-label="5 out of 5 stars"><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg></div>
+              <blockquote>"Between the two of us we take six medicines a day. Emeravita saves us about ₹900 a month, and the refill reminders mean we never panic on a Sunday."</blockquote>
+              <p class="mb-story-who"><strong>Ramesh &amp; Lakshmi</strong><span>Emeravita members · Hyderabad</span></p>
+            </div>
+          </article>
+          <article class="mb-story">
+            <div class="mb-story-photo"><img src="https://images.pexels.com/photos/7437945/pexels-photo-7437945.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Smiling man wearing a red turban" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="mb-story-body">
+              <div class="mb-stars" aria-label="5 out of 5 stars"><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg></div>
+              <blockquote>"I put my parents and my brother's family on one Family plan. Five people, one bill, and the yearly health check alone was worth it."</blockquote>
+              <p class="mb-story-who"><strong>Harpreet S.</strong><span>Family member · Vijayawada</span></p>
+            </div>
+          </article>
+          <article class="mb-story">
+            <div class="mb-story-photo"><img src="https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Woman meditating indoors" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="mb-story-body">
+              <div class="mb-stars" aria-label="4 out of 5 stars"><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18"><use href="#mb-star"/></svg><svg width="18" height="18" class="mb-star-off"><use href="#mb-star"/></svg></div>
+              <blockquote>"I started on Basic just for the reminders. The pharmacist chat on Emeravita helped me sort out my supplements properly. I feel calmer about my health now."</blockquote>
+              <p class="mb-story-who"><strong>Divya M.</strong><span>Emeravita member · Visakhapatnam</span></p>
+            </div>
+          </article>
+
+          </div>
+
+          <div class="mb-stack-nav">
+            <button type="button" class="mb-nav-btn" id="mbPrev" aria-label="Previous story"><svg width="20" height="20" style="transform:scaleX(-1)"><use href="#mb-arrow"/></svg></button>
+            <div class="mb-stack-dots" id="mbDots"></div>
+            <button type="button" class="mb-nav-btn" id="mbNext" aria-label="Next story"><svg width="20" height="20"><use href="#mb-arrow"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. FAQ + JOIN CTA (directly above footer) ================= -->
+    <section class="mb-section mb-faq mb-tint" id="mb-faq">
+      <div class="container mb-faq-grid">
+        <div class="mb-faq-list mb-reveal" data-mb="side-a">
+          <span class="mb-tag">Questions</span>
+          <h2 class="mb-h2">Membership FAQs</h2>
+
+          <div class="mb-acc">
+            <div class="mb-acc-item is-open">
+              <button type="button" class="mb-acc-q" aria-expanded="true">Can I cancel my membership anytime?<svg width="20" height="20"><use href="#mb-plus"/></svg></button>
+              <div class="mb-acc-a"><p>Yes. Cancel from your account in two clicks. Monthly plans end at the close of the billing month; yearly plans are refunded for the unused months.</p></div>
+            </div>
+            <div class="mb-acc-item">
+              <button type="button" class="mb-acc-q" aria-expanded="false">Does the discount apply to prescription medicines?<svg width="20" height="20"><use href="#mb-plus"/></svg></button>
+              <div class="mb-acc-a"><p>Yes, member discounts apply to prescription and over-the-counter medicines, vitamins and personal care. A few price-controlled items may be excluded.</p></div>
+            </div>
+            <div class="mb-acc-item">
+              <button type="button" class="mb-acc-q" aria-expanded="false">How do I add family members?<svg width="20" height="20"><use href="#mb-plus"/></svg></button>
+              <div class="mb-acc-a"><p>On the Family plan, go to <em>My Membership → Members</em> and add up to four people with their name and phone number.</p></div>
+            </div>
+            <div class="mb-acc-item">
+              <button type="button" class="mb-acc-q" aria-expanded="false">Which cities get free member delivery?<svg width="20" height="20"><use href="#mb-plus"/></svg></button>
+              <div class="mb-acc-a"><p>All 35+ cities we deliver to across Telangana, Andhra Pradesh and beyond. Same-day delivery applies inside city limits.</p></div>
+            </div>
+            <div class="mb-acc-item">
+              <button type="button" class="mb-acc-q" aria-expanded="false">Can I upgrade or downgrade later?<svg width="20" height="20"><use href="#mb-plus"/></svg></button>
+              <div class="mb-acc-a"><p>Any time. Upgrades take effect immediately; downgrades start from your next billing date.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="mb-join mb-reveal" data-mb="side-b">
+          <div class="mb-join-img">
+            <img src="https://images.pexels.com/photos/6975184/pexels-photo-6975184.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Senior couple smiling while using a laptop" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <div class="mb-join-body">
+            <span class="mb-join-orb" aria-hidden="true"></span>
+            <h2>Ready to start saving?</h2>
+            <p>Join in under a minute. Your first month of Emeravita is free.</p>
+            <div class="mb-join-actions">
+              <a href="login.html" class="btn btn-primary">Join Emeravita
+                <svg class="arrow" width="18" height="18"><use href="#mb-arrow"/></svg>
+              </a>
+              <a href="contact.html" class="btn btn-secondary">Ask a Question</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= 8. MEMBERSHIP CTA (above footer) ================= -->
+    <section class="mb-bottom-cta" aria-labelledby="mbBottomCtaTitle">
+      <div class="container">
+        <div class="mb-bottom-cta-card mb-reveal" data-mb="up">
+          <span class="mb-tag">Emeravita Membership</span>
+          <h2 id="mbBottomCtaTitle">Make every health purchase count</h2>
+          <p>Choose the membership that fits your family and start saving on the care you already need.</p>
+          <div class="mb-bottom-cta-actions">
+            <a href="login.html" class="btn btn-primary">Join Emeravita</a>
+            <a href="#mb-plans" class="btn btn-secondary">Explore Plans</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+          <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+          <span class="brand-text">
+            <span class="brand-name">Emeravita</span>
+            <span class="brand-tagline">Wellness, polished like a gem.</span>
+          </span>
+        </a>
+        <p>Your trusted neighbourhood pharmacy — now online. Genuine medicines, vitamins and personal care delivered with care.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 01.5-.5z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M4 3h4.5l4.2 5.9L17.8 3H20l-6.3 7.4L21 21h-4.5l-4.6-6.4L6.3 21H4l6.9-8z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership Plans</a></li>
+          <li><a href="delivery.html">Home Delivery Info</a></li>
+          <li><a href="login.html">Member Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="products.html#medicines">Medicines</a></li>
+          <li><a href="products.html#vitamins">Vitamins &amp; Supplements</a></li>
+          <li><a href="products.html#personal-care">Personal Care</a></li>
+          <li><a href="products.html#devices">Health Devices</a></li>
+          <li><a href="products.html#ph-categories">First Aid</a></li>
+          <li><a href="products.html#ph-categories">Baby &amp; Mother Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>12 Wellness Avenue, Banjara Hills, Hyderabad</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="tel:+919000000000">+91 90000 00000</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><a href="mailto:care@zenora.com">care@zenora.com</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Open daily: 7 AM – 11 PM</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="contact.html">Send us a message</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> Emeravita Health Store. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5m-6 6l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <script src="membership.js"></script>
+</body>
+</html>

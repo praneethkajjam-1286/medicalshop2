@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Emeravita Health Store</title>
+  <meta name="description" content="Meet Emeravita: a trusted pharmacy since 2012. Our story, mission, values, pharmacists and quality standards. Wellness, polished like a gem." />
+  <link rel="icon" type="image/png" href="assets/images/emeravita-icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/emeravita-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Shared site styles: header, footer, theme colours, buttons -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem("careplus-theme");
+        root.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      } catch (e) {
+        root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <!-- About page styles -->
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body class="about-body">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+        <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+        <span class="brand-text">
+          <span class="brand-name">Emeravita</span>
+          <span class="brand-tagline">Wellness, polished like a gem.</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="rtlToggle" aria-label="Toggle text direction (RTL / LTR)" title="Switch LTR / RTL">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h14m0 0l-4-4m4 4l-4 4M20 16H6m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <!-- The ONLY header CTA -->
+        <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="ab-page">
+
+    <!-- ================= 1. HERO – split panel + 3D image collage (full viewport) ================= -->
+    <section class="ab-hero" id="ab-hero">
+      <div class="ab-hero-panel">
+        <span class="ab-grid-lines" aria-hidden="true"></span>
+        <span class="ab-blob ab-blob-1" aria-hidden="true"></span>
+        <span class="ab-blob ab-blob-2" aria-hidden="true"></span>
+
+        <div class="ab-hero-copy">
+          <h1 class="ab-hero-title">
+            <span class="ab-line"><span>Care that began</span></span>
+            <span class="ab-line"><span>at a small counter,</span></span>
+            <span class="ab-line"><span><em>now reaches thousands.</em></span></span>
+          </h1>
+
+          <p class="ab-hero-text">Emeravita started in 2012 as a neighbourhood pharmacy with one promise: every medicine genuine, every customer heard. Today our pharmacists serve families across 35+ cities, with the same calm and personal care.</p>
+
+          <div class="ab-hero-actions">
+            <a href="#ab-story" class="btn btn-primary">Read Our Story
+              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#ab-team" class="btn btn-secondary">Meet the Team</a>
+          </div>
+
+          <dl class="ab-hero-facts">
+            <div><dt>2012</dt><dd>Founded</dd></div>
+            <div><dt>40+</dt><dd>Pharmacists</dd></div>
+            <div><dt>35+</dt><dd>Cities served</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="ab-hero-visual" id="abHeroVisual">
+        <div class="ab-collage" id="abCollage">
+          <figure class="ab-shot ab-shot-main">
+            <img src="https://images.pexels.com/photos/8657290/pexels-photo-8657290.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Two Emeravita pharmacists working together at the counter" onerror="this.classList.add('img-fallback')" />
+          </figure>
+          <figure class="ab-shot ab-shot-side">
+            <img src="https://images.pexels.com/photos/14797855/pexels-photo-14797855.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Pharmacist arranging medicines on shelves" onerror="this.classList.add('img-fallback')" />
+          </figure>
+          <figure class="ab-shot ab-shot-round">
+            <img src="https://images.pexels.com/photos/161688/pexels-photo-161688.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Assorted tablets and capsules" onerror="this.classList.add('img-fallback')" />
+          </figure>
+
+          <div class="ab-seal" aria-hidden="true">
+            <svg viewBox="0 0 120 120" class="ab-seal-ring">
+              <defs><path id="abSealPath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+              <text textLength="286" lengthAdjust="spacing"><textPath href="#abSealPath" textLength="286" lengthAdjust="spacing">TRUSTED PHARMACY &#8226; SINCE 2012 &#8226; GENUINE CARE &#8226;</textPath></text>
+            </svg>
+            <span class="ab-seal-core">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+
+          <div class="ab-chip ab-chip-1">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.6-9.5 9-9.5 9z" fill="currentColor"/></svg>
+            <span><strong>1.2M+</strong> prescriptions filled</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ab-marquee" aria-hidden="true">
+        <div class="ab-marquee-track">
+          <span>Genuine Medicines</span><i></i><span>Registered Pharmacists</span><i></i><span>Cold-Chain Storage</span><i></i><span>Same-Day Delivery</span><i></i><span>Honest Pricing</span><i></i><span>Personal Care</span><i></i>
+          <span>Genuine Medicines</span><i></i><span>Registered Pharmacists</span><i></i><span>Cold-Chain Storage</span><i></i><span>Same-Day Delivery</span><i></i><span>Honest Pricing</span><i></i><span>Personal Care</span><i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. OUR STORY ================= -->
+    <section class="ab-section ab-story" id="ab-story">
+      <div class="container ab-story-grid">
+        <div class="ab-story-media ab-reveal" data-ab="slide-start">
+          <div class="ab-frame">
+            <img src="https://images.pexels.com/photos/8667531/pexels-photo-8667531.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Classic wooden pharmacy interior" loading="lazy" onerror="this.classList.add('img-fallback')" class="ab-parallax" data-speed="0.08" />
+          </div>
+          <div class="ab-est">
+            <span>Est.</span>
+            <strong>2012</strong>
+            <small>Banjara Hills</small>
+          </div>
+        </div>
+
+        <div class="ab-story-copy ab-reveal" data-ab="slide-end">
+          <span class="ab-kicker">Our Story</span>
+          <h2 class="ab-h2">A neighbourhood pharmacy that never stopped listening</h2>
+          <p>Our founder, Dr. Anjali Rao, opened the first Emeravita counter after watching families struggle to find genuine medicines and clear advice. She stocked fewer brands, checked every batch herself, and took time to explain each prescription.</p>
+          <p>That habit of slowing down for people became our culture. As we grew online, we kept it: every order is still checked by a registered pharmacist, and every question still reaches a real person.</p>
+          <blockquote class="ab-quote">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M7 7h4v4H8c0 2 1 3 3 3v3c-3.5 0-6-2.2-6-6V7zm9 0h4v4h-3c0 2 1 3 3 3v3c-3.5 0-6-2.2-6-6V7z" fill="currentColor"/></svg>
+            <p>Medicine works best when people feel calm and understood. That is the balance we are here to give.</p>
+            <cite>Dr. Anjali Rao, Founder &amp; Chief Pharmacist</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. MISSION · VISION · VALUES ================= -->
+    <section class="ab-section ab-pillars ab-tint" id="ab-pillars">
+      <div class="container">
+        <header class="ab-head ab-reveal" data-ab="rise">
+          <span class="ab-kicker">What Drives Us</span>
+          <h2 class="ab-h2">Mission, vision and the values we keep</h2>
+          <p>Three ideas guide every decision, from how we choose suppliers to how we answer your call.</p>
+        </header>
+
+        <div class="ab-pillar-grid">
+          <article class="ab-pillar ab-reveal" data-ab="flip-x" tabindex="0">
+            <img src="https://images.pexels.com/photos/3735736/pexels-photo-3735736.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Scientist testing medicine quality in a laboratory" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <div class="ab-pillar-body">
+              <span class="ab-pillar-num">01</span>
+              <h3>Our Mission</h3>
+              <p class="ab-pillar-more">Make genuine, fairly priced medicine and trusted pharmacist advice available to every home, on the same day it is needed.</p>
+            </div>
+          </article>
+          <article class="ab-pillar ab-reveal" data-ab="flip-x" tabindex="0">
+            <img src="https://images.pexels.com/photos/6129494/pexels-photo-6129494.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Smiling team of healthcare professionals" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <div class="ab-pillar-body">
+              <span class="ab-pillar-num">02</span>
+              <h3>Our Vision</h3>
+              <p class="ab-pillar-more">Be India's most trusted wellness partner, where people feel as cared for online as they do at their family pharmacy.</p>
+            </div>
+          </article>
+          <article class="ab-pillar ab-reveal" data-ab="flip-x" tabindex="0">
+            <img src="https://images.pexels.com/photos/9742736/pexels-photo-9742736.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Medicines in sealed blister packs" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <div class="ab-pillar-body">
+              <span class="ab-pillar-num">03</span>
+              <h3>Our Values</h3>
+              <p class="ab-pillar-more">Honesty in every label, patience in every conversation, and zero compromise on safety, storage or authenticity.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. JOURNEY TIMELINE ================= -->
+    <section class="ab-section ab-journey" id="ab-journey">
+      <div class="container ab-journey-grid">
+        <aside class="ab-journey-aside">
+          <div class="ab-sticky ab-reveal" data-ab="slide-start">
+            <span class="ab-kicker">Our Journey</span>
+            <h2 class="ab-h2">Fourteen years, one steady promise</h2>
+            <div class="ab-journey-img">
+              <img src="https://images.pexels.com/photos/8667531/pexels-photo-8667531.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Classic neighbourhood pharmacy interior representing where Emeravita began" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ab-journey-tag">Where it all began</span>
+            </div>
+          </div>
+        </aside>
+
+        <ol class="ab-timeline" id="abTimeline">
+          <span class="ab-tl-rail" aria-hidden="true"><span class="ab-tl-fill" id="abTlFill"></span></span>
+          <li class="ab-tl-item ab-reveal" data-ab="slide-end">
+            <span class="ab-tl-dot"></span>
+            <span class="ab-tl-year">2021</span>
+            <h3>Emeravita goes online</h3>
+            <p>Online ordering, prescription upload and free pharmacist chat launch for every customer.</p>
+          </li>
+          <li class="ab-tl-item ab-reveal" data-ab="slide-end">
+            <span class="ab-tl-dot"></span>
+            <span class="ab-tl-year">2024</span>
+            <h3>Emeravita membership</h3>
+            <p>Membership plans bring extra savings, priority dispatch and free consultations to families.</p>
+          </li>
+          <li class="ab-tl-item ab-reveal" data-ab="slide-end">
+            <span class="ab-tl-dot"></span>
+            <span class="ab-tl-year">2026</span>
+            <h3>35+ cities and growing</h3>
+            <p>Serving over 50,000 families across Telangana, Andhra Pradesh and beyond.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= 5. TEAM ================= -->
+    <section class="ab-section ab-team ab-tint" id="ab-team">
+      <div class="container">
+        <header class="ab-head ab-reveal" data-ab="rise">
+          <span class="ab-kicker">Our People</span>
+          <h2 class="ab-h2">The experts behind every order</h2>
+          <p>Registered pharmacists and health specialists who check, pack and advise with care.</p>
+        </header>
+
+        <div class="ab-team-grid">
+          <article class="ab-member ab-reveal" data-ab="rise-3d">
+            <div class="ab-member-photo">
+              <img src="https://images.pexels.com/photos/19963165/pexels-photo-19963165.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Anjali Rao" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <div class="ab-member-social">
+                <a href="#" aria-label="Dr. Anjali Rao on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+                <a href="#" aria-label="Email Dr. Anjali Rao"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+              </div>
+            </div>
+            <div class="ab-member-info"><h3>Dr. Anjali Rao</h3><p>Founder &amp; Chief Pharmacist</p></div>
+          </article>
+          <article class="ab-member ab-reveal" data-ab="rise-3d">
+            <div class="ab-member-photo">
+              <img src="https://images.pexels.com/photos/19438563/pexels-photo-19438563.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Karthik Reddy" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <div class="ab-member-social">
+                <a href="#" aria-label="Dr. Karthik Reddy on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+                <a href="#" aria-label="Email Dr. Karthik Reddy"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+              </div>
+            </div>
+            <div class="ab-member-info"><h3>Dr. Karthik Reddy</h3><p>Clinical Pharmacist</p></div>
+          </article>
+          <article class="ab-member ab-reveal" data-ab="rise-3d">
+            <div class="ab-member-photo">
+              <img src="https://images.pexels.com/photos/18828741/pexels-photo-18828741.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Meera Nair" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <div class="ab-member-social">
+                <a href="#" aria-label="Dr. Meera Nair on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+                <a href="#" aria-label="Email Dr. Meera Nair"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+              </div>
+            </div>
+            <div class="ab-member-info"><h3>Dr. Meera Nair</h3><p>Wellness &amp; Nutrition Lead</p></div>
+          </article>
+          <article class="ab-member ab-reveal" data-ab="rise-3d">
+            <div class="ab-member-photo">
+              <img src="https://images.pexels.com/photos/6129500/pexels-photo-6129500.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Arjun Varma" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <div class="ab-member-social">
+                <a href="#" aria-label="Dr. Arjun Varma on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+                <a href="#" aria-label="Email Dr. Arjun Varma"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+              </div>
+            </div>
+            <div class="ab-member-info"><h3>Dr. Arjun Varma</h3><p>Head of Quality Assurance</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. QUALITY STANDARDS (progress rings) ================= -->
+    <section class="ab-section ab-quality" id="ab-quality">
+      <div class="container ab-quality-grid">
+        <div class="ab-quality-copy ab-reveal" data-ab="slide-start">
+          <span class="ab-kicker ab-kicker-light">Quality Standards</span>
+          <h2 class="ab-h2">Checked in the lab, trusted at home</h2>
+          <p>Every batch we stock is sourced from licensed manufacturers and checked against our quality checklist before it reaches a shelf.</p>
+
+          <div class="ab-rings">
+            <div class="ab-ring" data-value="100">
+              <svg viewBox="0 0 120 120"><circle class="ab-ring-bg" cx="60" cy="60" r="52"/><circle class="ab-ring-val" cx="60" cy="60" r="52"/></svg>
+              <span class="ab-ring-num"><b>0</b>%</span>
+              <small>Genuine sourcing</small>
+            </div>
+            <div class="ab-ring" data-value="99">
+              <svg viewBox="0 0 120 120"><circle class="ab-ring-bg" cx="60" cy="60" r="52"/><circle class="ab-ring-val" cx="60" cy="60" r="52"/></svg>
+              <span class="ab-ring-num"><b>0</b>%</span>
+              <small>Order accuracy</small>
+            </div>
+            <div class="ab-ring" data-value="97">
+              <svg viewBox="0 0 120 120"><circle class="ab-ring-bg" cx="60" cy="60" r="52"/><circle class="ab-ring-val" cx="60" cy="60" r="52"/></svg>
+              <span class="ab-ring-num"><b>0</b>%</span>
+              <small>On-time delivery</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="ab-quality-media ab-reveal" data-ab="slide-end">
+          <div class="ab-quality-img">
+            <img src="https://images.pexels.com/photos/8442281/pexels-photo-8442281.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Two scientists examining medicine samples in a laboratory" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <ul class="ab-cert-list">
+            <li><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Licensed retail &amp; online pharmacy</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2v6m0 8v6M2 12h6m8 0h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>2–8 °C cold-chain monitoring</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Batch &amp; expiry checks on every order</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. COMMUNITY & REACH ================= -->
+    <section class="ab-section ab-community" id="ab-community">
+      <div class="container ab-community-grid">
+        <div class="ab-community-media ab-reveal" data-ab="zoom">
+          <div class="ab-community-img">
+            <img src="https://images.pexels.com/photos/13456097/pexels-photo-13456097.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Emeravita delivery partner handing a parcel to a customer at her door" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <div class="ab-float-stat">
+            <strong><span class="ab-count" data-target="50000">0</span>+</strong>
+            <span>families served</span>
+          </div>
+        </div>
+
+        <div class="ab-community-copy ab-reveal" data-ab="slide-end">
+          <span class="ab-kicker">Beyond the Counter</span>
+          <h2 class="ab-h2">Showing up for our community</h2>
+          <p>Care does not stop at checkout. Our teams run free health camps, deliver to elderly customers at no extra cost, and help families understand long-term medication.</p>
+
+          <div class="ab-impact">
+            <div class="ab-impact-card">
+              <span class="ab-impact-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.6-9.5 9-9.5 9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <div><strong><span class="ab-count" data-target="120">0</span>+</strong><p>Free health camps</p></div>
+            </div>
+            <div class="ab-impact-card">
+              <span class="ab-impact-icon"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <div><strong><span class="ab-count" data-target="8000">0</span>+</strong><p>Senior citizens supported</p></div>
+            </div>
+            <div class="ab-impact-card">
+              <span class="ab-impact-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+              <div><strong><span class="ab-count" data-target="35">0</span>+</strong><p>Cities with home delivery</p></div>
+            </div>
+          </div>
+
+          <a href="services.html" class="btn btn-primary">Explore Our Services
+            <svg class="arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. CTA (directly above footer) ================= -->
+    <section class="ab-cta" id="ab-cta">
+      <div class="ab-cta-bg"><img src="https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Smiling team of doctors and nurses" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+      <div class="container">
+        <div class="ab-cta-card ab-reveal" data-ab="zoom">
+          <span class="ab-cta-orbit" aria-hidden="true"></span>
+          <h2>Become part of the Emeravita family</h2>
+          <p>Join Emeravita for member savings, free delivery and a pharmacist who knows your name.</p>
+          <div class="ab-cta-actions">
+            <a href="membership.html" class="btn btn-primary">View Membership Plans
+              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+          <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+          <span class="brand-text">
+            <span class="brand-name">Emeravita</span>
+            <span class="brand-tagline">Wellness, polished like a gem.</span>
+          </span>
+        </a>
+        <p>Your trusted neighbourhood pharmacy — now online. Genuine medicines, vitamins and personal care delivered with care.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 01.5-.5z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M4 3h4.5l4.2 5.9L17.8 3H20l-6.3 7.4L21 21h-4.5l-4.6-6.4L6.3 21H4l6.9-8z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership Plans</a></li>
+          <li><a href="delivery.html">Home Delivery Info</a></li>
+          <li><a href="login.html">Member Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="products.html#medicines">Medicines</a></li>
+          <li><a href="products.html#vitamins">Vitamins &amp; Supplements</a></li>
+          <li><a href="products.html#personal-care">Personal Care</a></li>
+          <li><a href="products.html#devices">Health Devices</a></li>
+          <li><a href="products.html#ph-categories">First Aid</a></li>
+          <li><a href="products.html#ph-categories">Baby &amp; Mother Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>12 Wellness Avenue, Banjara Hills, Hyderabad</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="tel:+919000000000">+91 90000 00000</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><a href="mailto:care@zenora.com">care@zenora.com</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Open daily: 7 AM – 11 PM</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="contact.html">Send us a message</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> Emeravita Health Store. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5m-6 6l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <script src="about.js"></script>
+</body>
+</html>

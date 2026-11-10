@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Emeravita Health Store</title>
+  <meta name="description" content="Emeravita pharmacy services: prescription medicines, OTC healthcare, vitamins, personal care, medical devices and pharmacist consultations with home delivery." />
+  <link rel="icon" type="image/png" href="assets/images/emeravita-icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/emeravita-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem("careplus-theme");
+        root.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      } catch (e) {
+        root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body class="service-body">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+        <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+        <span class="brand-text">
+          <span class="brand-name">Emeravita</span>
+          <span class="brand-tagline">Wellness, polished like a gem.</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="rtlToggle" aria-label="Toggle text direction (RTL / LTR)" title="Switch LTR / RTL">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h14m0 0l-4-4m4 4l-4 4M20 16H6m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <!-- The ONLY header CTA -->
+        <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icon sprite used on this page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sv-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-rx" viewBox="0 0 24 24"><path d="M6 3h6a4 4 0 010 8H6zM6 11v10M10 11l9 10M19 13l-6 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-pill" viewBox="0 0 24 24"><rect x="2.5" y="8" width="19" height="8" rx="4" transform="rotate(-35 12 12)" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 7.5l6 9" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="sv-leaf" viewBox="0 0 24 24"><path d="M4 20c0-9 6-15 16-16-1 10-7 16-16 16zM4 20l8-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20.5l1.4-4.8A8 8 0 1121 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="sv-prev" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-next" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sv-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="sv-page">
+
+    <!-- ================= 1. HERO ================= -->
+    <section class="sv-hero" id="sv-hero">
+      <span class="sv-hero-panel" aria-hidden="true"></span>
+      <span class="sv-hero-dots" aria-hidden="true"></span>
+      <div class="container sv-hero-grid">
+        <div class="sv-hero-copy">
+          <span class="eyebrow sv-rise">Our Services &middot; Licensed Pharmacy</span>
+          <h1 class="sv-hero-title sv-rise">Complete pharmacy care, <em>from refill to wellness.</em></h1>
+          <p class="sv-hero-text sv-rise">Six services under one roof: prescription dispensing, everyday medicines, vitamins, personal care, health devices and one-to-one guidance from our pharmacists, with home delivery across our service cities.</p>
+          <div class="sv-hero-actions sv-rise">
+            <a href="#sv-services" class="btn btn-primary">Explore Services
+              <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">Talk to a Pharmacist</a>
+          </div>
+          <ul class="sv-hero-chips sv-rise" aria-label="Service highlights">
+            <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Pharmacist-checked orders</li>
+            <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Sealed home delivery</li>
+            <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Member savings</li>
+          </ul>
+        </div>
+
+        <div class="sv-hero-media">
+          <figure class="sv-hero-frame">
+            <img src="https://images.pexels.com/photos/13119976/pexels-photo-13119976.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Pharmacist arranging medicines on pharmacy shelves" onerror="this.classList.add('img-fallback')" />
+          </figure>
+          <div class="sv-hero-card sv-hc-a">
+            <span class="sv-hc-num">6</span>
+            <span>core services for your whole family</span>
+          </div>
+          <div class="sv-hero-card sv-hc-b">
+            <span class="sv-hc-icon"><svg width="20" height="20" aria-hidden="true"><use href="#sv-rx"/></svg></span>
+            <span><strong>Prescription ready</strong>Upload and we verify</span>
+          </div>
+          <span class="sv-hero-ring" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. OUR SERVICES (6 cards) ================= -->
+    <section class="sv-section sv-services" id="sv-services">
+      <div class="container">
+        <div class="sv-head sv-head-split">
+          <div class="sv-reveal">
+            <span class="eyebrow">Our Services</span>
+            <h2 class="section-title">Everything your health routine needs</h2>
+          </div>
+          <p class="section-sub sv-reveal">Choose a service to see what's included, how it works, what it costs and answers to common questions.</p>
+        </div>
+
+        <div class="sv-grid">
+          <article class="sv-card sv-reveal">
+            <div class="sv-card-media">
+              <img src="assets/images/services-prescription-card.png" alt="Assorted medicines in colorful blister packs" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="sv-card-badge">Rx Care</span>
+            </div>
+            <div class="sv-card-body">
+              <span class="sv-card-icon"><svg width="22" height="22" aria-hidden="true"><use href="#sv-rx"/></svg></span>
+              <h3>Prescription Medicines</h3>
+              <p>Upload your doctor's prescription and our pharmacists verify, dispense and deliver it sealed to your door.</p>
+              <ul class="sv-card-list">
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Pharmacist verification</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Refill reminders</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Cold-chain for sensitive items</li>
+              </ul>
+              <a href="servicedetail.html?service=prescription-medicines" class="btn btn-primary sv-view" data-service="prescription-medicines">View Service
+                <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="sv-card sv-reveal">
+            <div class="sv-card-media">
+              <img src="https://images.pexels.com/photos/3683073/pexels-photo-3683073.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Everyday medicines in blister packs on a red surface" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="sv-card-badge">Everyday Care</span>
+            </div>
+            <div class="sv-card-body">
+              <span class="sv-card-icon"><svg width="22" height="22" aria-hidden="true"><use href="#sv-pill"/></svg></span>
+              <h3>OTC Medicines &amp; Healthcare</h3>
+              <p>Pain relief, cold and flu, digestion, allergy and first-aid essentials you can buy without a prescription.</p>
+              <ul class="sv-card-list">
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Genuine, in-date stock</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Dosage guidance on request</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Express 2-hour delivery</li>
+              </ul>
+              <a href="servicedetail.html?service=otc-medicines" class="btn btn-primary sv-view" data-service="otc-medicines">View Service
+                <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="sv-card sv-reveal">
+            <div class="sv-card-media">
+              <img src="https://images.pexels.com/photos/15897784/pexels-photo-15897784.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Vitamin capsules spilling from supplement bottles" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="sv-card-badge">Nutrition</span>
+            </div>
+            <div class="sv-card-body">
+              <span class="sv-card-icon"><svg width="22" height="22" aria-hidden="true"><use href="#sv-leaf"/></svg></span>
+              <h3>Vitamins &amp; Supplements</h3>
+              <p>Multivitamins, minerals, omega-3, protein and herbal supplements from trusted brands, with help choosing.</p>
+              <ul class="sv-card-list">
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Trusted brands only</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Interaction checks</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Member discounts</li>
+              </ul>
+              <a href="servicedetail.html?service=vitamins-supplements" class="btn btn-primary sv-view" data-service="vitamins-supplements">View Service
+                <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="sv-card sv-reveal">
+            <div class="sv-card-media">
+              <img src="https://images.pexels.com/photos/7317090/pexels-photo-7317090.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Skincare bottles arranged on green moss" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="sv-card-badge">Self-Care</span>
+            </div>
+            <div class="sv-card-body">
+              <span class="sv-card-icon"><svg width="22" height="22" aria-hidden="true"><use href="#sv-drop"/></svg></span>
+              <h3>Personal Care &amp; Wellness</h3>
+              <p>Dermatologist-recommended skincare, oral care, hygiene, baby care and wellness products for daily routines.</p>
+              <ul class="sv-card-list">
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Sensitive-skin ranges</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Baby &amp; mother care</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Hygiene essentials</li>
+              </ul>
+              <a href="servicedetail.html?service=personal-care" class="btn btn-primary sv-view" data-service="personal-care">View Service
+                <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="sv-card sv-reveal">
+            <div class="sv-card-media">
+              <img src="https://images.pexels.com/photos/8088852/pexels-photo-8088852.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Senior adult checking blood pressure with a digital monitor at home" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="sv-card-badge">Home Monitoring</span>
+            </div>
+            <div class="sv-card-body">
+              <span class="sv-card-icon"><svg width="22" height="22" aria-hidden="true"><use href="#sv-pulse"/></svg></span>
+              <h3>Medical Devices &amp; Equipment</h3>
+              <p>BP monitors, glucometers, thermometers, nebulisers and mobility aids, with a walkthrough on how to use them.</p>
+              <ul class="sv-card-list">
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Brand warranty</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>How-to-use demo</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Test strips &amp; refills</li>
+              </ul>
+              <a href="servicedetail.html?service=medical-devices" class="btn btn-primary sv-view" data-service="medical-devices">View Service
+                <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="sv-card sv-reveal">
+            <div class="sv-card-media">
+              <img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Healthcare professional talking with a patient in a bright clinic" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="sv-card-badge">Guidance</span>
+            </div>
+            <div class="sv-card-body">
+              <span class="sv-card-icon"><svg width="22" height="22" aria-hidden="true"><use href="#sv-chat"/></svg></span>
+              <h3>Health Consultation &amp; Guidance</h3>
+              <p>Talk to a pharmacist about your medicines, side effects, timing and everyday health questions by phone or chat.</p>
+              <ul class="sv-card-list">
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Medicine reviews</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Phone or chat</li>
+                <li><svg width="16" height="16" aria-hidden="true"><use href="#sv-check"/></svg>Included in member plans</li>
+              </ul>
+              <a href="servicedetail.html?service=health-consultation" class="btn btn-primary sv-view" data-service="health-consultation">View Service
+                <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. GALLERY ================= -->
+    <section class="sv-section sv-gallery" id="sv-gallery">
+      <div class="container">
+        <div class="sv-head sv-head-split">
+          <div class="sv-reveal">
+            <span class="eyebrow">Gallery of Our Work</span>
+            <h2 class="section-title">Inside a day at Emeravita</h2>
+          </div>
+          <p class="section-sub sv-reveal">From the dispensing counter to your doorstep. Select any photo to view it larger.</p>
+        </div>
+
+        <div class="sv-mosaic" id="svMosaic">
+          <button type="button" class="sv-tile sv-t1 sv-reveal" data-index="0" aria-label="Open photo: Pharmacist checking stock between medicine shelves">
+            <img src="https://images.pexels.com/photos/19471015/pexels-photo-19471015.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Pharmacist checking stock between medicine shelves" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="sv-tile-cap"><strong>Dispensing counter</strong><small>Every order checked by a pharmacist</small></span>
+            <span class="sv-tile-zoom" aria-hidden="true"><svg width="18" height="18"><use href="#sv-expand"/></svg></span>
+          </button>
+          <button type="button" class="sv-tile sv-t2 sv-reveal" data-index="1" aria-label="Open photo: Healthcare team walking together in a hospital corridor">
+            <img src="https://images.pexels.com/photos/6129499/pexels-photo-6129499.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Healthcare team walking together in a hospital corridor" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="sv-tile-cap"><strong>Care partners</strong><small>Working alongside local clinics</small></span>
+            <span class="sv-tile-zoom" aria-hidden="true"><svg width="18" height="18"><use href="#sv-expand"/></svg></span>
+          </button>
+          <button type="button" class="sv-tile sv-t3 sv-reveal" data-index="2" aria-label="Open photo: Glucometer reading with sugar cubes">
+            <img src="https://images.pexels.com/photos/5469165/pexels-photo-5469165.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Person testing blood sugar with a glucometer next to sugar cubes" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="sv-tile-cap"><strong>Device demos</strong><small>Learn your glucometer in minutes</small></span>
+            <span class="sv-tile-zoom" aria-hidden="true"><svg width="18" height="18"><use href="#sv-expand"/></svg></span>
+          </button>
+          <button type="button" class="sv-tile sv-t4 sv-reveal" data-index="3" aria-label="Open photo: Skincare bottles with bath salts">
+            <img src="https://images.pexels.com/photos/6621462/pexels-photo-6621462.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Skincare bottles arranged with bath salts on a white table" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="sv-tile-cap"><strong>Personal care shelf</strong><small>Gentle, skin-friendly ranges</small></span>
+            <span class="sv-tile-zoom" aria-hidden="true"><svg width="18" height="18"><use href="#sv-expand"/></svg></span>
+          </button>
+          <button type="button" class="sv-tile sv-t5 sv-reveal" data-index="4" aria-label="Open photo: Medicines sorted in blister packs and a weekly organiser">
+            <img src="https://images.pexels.com/photos/3873147/pexels-photo-3873147.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Medicines in blister packs and a weekly pill organiser" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="sv-tile-cap"><strong>Refill packs</strong><small>Sorted for your monthly routine</small></span>
+            <span class="sv-tile-zoom" aria-hidden="true"><svg width="18" height="18"><use href="#sv-expand"/></svg></span>
+          </button>
+          <button type="button" class="sv-tile sv-t6 sv-reveal" data-index="5" aria-label="Open photo: Pharmacy storefront">
+            <img src="https://images.pexels.com/photos/17003640/pexels-photo-17003640.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Black and white photo of a pharmacy storefront" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="sv-tile-cap"><strong>Our neighbourhood store</strong><small>Walk in or order online</small></span>
+            <span class="sv-tile-zoom" aria-hidden="true"><svg width="18" height="18"><use href="#sv-expand"/></svg></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="sv-lightbox" id="svLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+        <div class="sv-lb-backdrop" data-lb-close></div>
+        <figure class="sv-lb-figure">
+          <img id="svLbImg" src="" alt="" />
+          <figcaption id="svLbCap"></figcaption>
+        </figure>
+        <button type="button" class="sv-lb-btn sv-lb-close" data-lb-close aria-label="Close photo viewer"><svg width="22" height="22" aria-hidden="true"><use href="#sv-close"/></svg></button>
+        <button type="button" class="sv-lb-btn sv-lb-prev" id="svLbPrev" aria-label="Previous photo"><svg width="24" height="24" aria-hidden="true"><use href="#sv-prev"/></svg></button>
+        <button type="button" class="sv-lb-btn sv-lb-next" id="svLbNext" aria-label="Next photo"><svg width="24" height="24" aria-hidden="true"><use href="#sv-next"/></svg></button>
+        <span class="sv-lb-count" id="svLbCount" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <!-- ================= 4. FAQ ================= -->
+    <section class="sv-section sv-faq" id="sv-faq">
+      <div class="container sv-faq-grid">
+        <aside class="sv-faq-side sv-reveal">
+          <span class="eyebrow">Questions &amp; Answers</span>
+          <h2 class="section-title">Before you order</h2>
+          <p class="section-sub">Quick answers about prescriptions, delivery, payments and returns. Can't find yours? Our pharmacists are a call away.</p>
+          <div class="sv-faq-help">
+            <span class="sv-faq-help-icon"><svg width="22" height="22" aria-hidden="true"><use href="#sv-phone"/></svg></span>
+            <div>
+              <strong>Still have a question?</strong>
+              <a href="contact.html">Contact our pharmacy team
+                <svg class="sv-arrow-ic" width="16" height="16" aria-hidden="true"><use href="#sv-arrow"/></svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="sv-acc sv-reveal" id="svAcc">
+          <div class="sv-acc-item">
+            <h3 class="sv-acc-h"><button type="button" class="sv-acc-btn" id="svq1" aria-expanded="false" aria-controls="sva1">Do I need a prescription to order medicines?<span class="sv-pm" aria-hidden="true"></span></button></h3>
+            <div class="sv-acc-panel" id="sva1" role="region" aria-labelledby="svq1" hidden><div><p>Only for prescription-only medicines. You can upload a clear photo of a valid prescription at checkout or through our <a href="contact.html#prescription">prescription enquiry form</a>. Over-the-counter products, vitamins, personal care and devices can be ordered without one.</p></div></div>
+          </div>
+          <div class="sv-acc-item">
+            <h3 class="sv-acc-h"><button type="button" class="sv-acc-btn" id="svq2" aria-expanded="false" aria-controls="sva2">Who checks my order before it is sent?<span class="sv-pm" aria-hidden="true"></span></button></h3>
+            <div class="sv-acc-panel" id="sva2" role="region" aria-labelledby="svq2" hidden><div><p>A pharmacist reviews every order: the prescription, the medicine and strength, and the expiry date. If anything is unclear, we call you before dispatch.</p></div></div>
+          </div>
+          <div class="sv-acc-item">
+            <h3 class="sv-acc-h"><button type="button" class="sv-acc-btn" id="svq3" aria-expanded="false" aria-controls="sva3">How much does delivery cost?<span class="sv-pm" aria-hidden="true"></span></button></h3>
+            <div class="sv-acc-panel" id="sva3" role="region" aria-labelledby="svq3" hidden><div><p>Same-day delivery is free on orders above ₹499 and ₹29 below that. Express 2-hour delivery starts at ₹49. Emeravita and Family members get unlimited free delivery. See the <a href="delivery.html">delivery page</a> for full details.</p></div></div>
+          </div>
+          <div class="sv-acc-item">
+            <h3 class="sv-acc-h"><button type="button" class="sv-acc-btn" id="svq4" aria-expanded="false" aria-controls="sva4">Can a pharmacist advise me on which product to buy?<span class="sv-pm" aria-hidden="true"></span></button></h3>
+            <div class="sv-acc-panel" id="sva4" role="region" aria-labelledby="svq4" hidden><div><p>Yes. Our pharmacists can explain how a product is used, check it against the medicines you already take and suggest when to see a doctor. They do not diagnose conditions or replace your doctor's advice.</p></div></div>
+          </div>
+          <div class="sv-acc-item">
+            <h3 class="sv-acc-h"><button type="button" class="sv-acc-btn" id="svq5" aria-expanded="false" aria-controls="sva5">Which payment methods do you accept?<span class="sv-pm" aria-hidden="true"></span></button></h3>
+            <div class="sv-acc-panel" id="sva5" role="region" aria-labelledby="svq5" hidden><div><p>UPI, debit and credit cards, net banking, and cash, UPI or card on delivery.</p></div></div>
+          </div>
+          <div class="sv-acc-item">
+            <h3 class="sv-acc-h"><button type="button" class="sv-acc-btn" id="svq6" aria-expanded="false" aria-controls="sva6">What if an item arrives damaged or wrong?<span class="sv-pm" aria-hidden="true"></span></button></h3>
+            <div class="sv-acc-panel" id="sva6" role="region" aria-labelledby="svq6" hidden><div><p>Let us know within 48 hours with a photo and we will replace or refund it. For safety reasons, medicines that have been opened cannot be returned unless they were supplied incorrectly.</p></div></div>
+          </div>
+          <div class="sv-acc-item">
+            <h3 class="sv-acc-h"><button type="button" class="sv-acc-btn" id="svq7" aria-expanded="false" aria-controls="sva7">Do members get extra benefits on these services?<span class="sv-pm" aria-hidden="true"></span></button></h3>
+            <div class="sv-acc-panel" id="sva7" role="region" aria-labelledby="svq7" hidden><div><p>Yes. Depending on the plan, members save 5–20% on medicines and get free delivery and pharmacist consultations. Compare plans on the <a href="membership.html">membership page</a>.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. CTA CARD (above footer) ================= -->
+    <section class="sv-cta" id="sv-cta">
+      <div class="container">
+        <div class="sv-cta-card sv-reveal">
+          <span class="sv-cta-orb sv-orb-1" aria-hidden="true"></span>
+          <span class="sv-cta-orb sv-orb-2" aria-hidden="true"></span>
+          <span class="sv-cta-plus" aria-hidden="true"></span>
+          <div class="sv-cta-copy">
+            <span class="eyebrow">We're Here to Help</span>
+            <h2>Not sure which service you need?</h2>
+            <p>Tell us what you're looking for and an Emeravita pharmacist will point you to the right medicine, product or plan.</p>
+            <a href="contact.html" class="btn btn-primary">Contact a Pharmacist
+              <svg class="sv-arrow-ic" width="18" height="18" aria-hidden="true"><use href="#sv-arrow"/></svg>
+            </a>
+          </div>
+          <figure class="sv-cta-media">
+            <img src="https://images.pexels.com/photos/5125690/pexels-photo-5125690.jpeg?auto=compress&cs=tinysrgb&w=900" alt="First aid kit with medical supplies laid out" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+          <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+          <span class="brand-text">
+            <span class="brand-name">Emeravita</span>
+            <span class="brand-tagline">Wellness, polished like a gem.</span>
+          </span>
+        </a>
+        <p>Your trusted neighbourhood pharmacy — now online. Genuine medicines, vitamins and personal care delivered with care.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 01.5-.5z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M4 3h4.5l4.2 5.9L17.8 3H20l-6.3 7.4L21 21h-4.5l-4.6-6.4L6.3 21H4l6.9-8z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership Plans</a></li>
+          <li><a href="delivery.html">Home Delivery Info</a></li>
+          <li><a href="login.html">Member Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="products.html#medicines">Medicines</a></li>
+          <li><a href="products.html#vitamins">Vitamins &amp; Supplements</a></li>
+          <li><a href="products.html#personal-care">Personal Care</a></li>
+          <li><a href="products.html#devices">Health Devices</a></li>
+          <li><a href="products.html#ph-categories">First Aid</a></li>
+          <li><a href="products.html#ph-categories">Baby &amp; Mother Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>12 Wellness Avenue, Banjara Hills, Hyderabad</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="tel:+919000000000">+91 90000 00000</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><a href="mailto:care@zenora.com">care@zenora.com</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Open daily: 7 AM – 11 PM</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="contact.html">Send us a message</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> Emeravita Health Store. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5m-6 6l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <script src="services.js"></script>
+</body>
+</html>

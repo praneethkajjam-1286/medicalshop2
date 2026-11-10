@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emeravita Health Store | Pharmacy & Health Products Store</title>
+  <meta name="description" content="Emeravita – your trusted pharmacy for medicines, vitamins and personal care with fast home delivery. Wellness, polished like a gem." />
+  <link rel="icon" type="image/png" href="assets/images/emeravita-icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/emeravita-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem("careplus-theme");
+        root.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      } catch (e) {
+        root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+        <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+        <span class="brand-text">
+          <span class="brand-name">Emeravita</span>
+          <span class="brand-tagline">Wellness, polished like a gem.</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="rtlToggle" aria-label="Toggle text direction (RTL / LTR)" title="Switch LTR / RTL">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h14m0 0l-4-4m4 4l-4 4M20 16H6m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <!-- The ONLY header CTA -->
+        <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= 1. HERO (full viewport) ================= -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1920&q=80" alt="Pharmacy medicines neatly arranged" onerror="this.classList.add('img-fallback')" />
+      </div>
+      <div class="hero-overlay"></div>
+      <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <span class="eyebrow reveal" data-anim="fade-up">Licensed Pharmacy &middot; Since 2012</span>
+          <h1 class="hero-title reveal" data-anim="fade-up">Everyday health essentials, <em>delivered with care.</em></h1>
+          <p class="hero-text reveal" data-anim="fade-up">Genuine medicines, trusted vitamins and gentle personal care — checked by registered pharmacists and brought to your door the same day.</p>
+          <div class="hero-buttons reveal" data-anim="fade-up">
+            <a href="products.html" class="btn btn-primary">Shop Essentials
+              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="contact.html#prescription" class="btn btn-secondary">Upload Prescription</a>
+          </div>
+          <ul class="hero-trust reveal" data-anim="fade-up">
+            <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% genuine products</li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Pharmacist verified</li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Same-day delivery</li>
+          </ul>
+        </div>
+
+        <div class="hero-cards" aria-hidden="true">
+          <div class="float-card fc-1">
+            <span class="fc-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <div><strong>Out for delivery</strong><small>Arriving in 45 min</small></div>
+          </div>
+          <div class="float-card fc-2">
+            <span class="fc-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><strong>Rx Verified</strong><small>by Pharmacist Anjali</small></div>
+          </div>
+          <div class="float-card fc-3">
+            <span class="fc-num">4.9</span>
+            <div><strong>Customer rating</strong><small>12,000+ reviews</small></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= 2. HEALTH ESSENTIALS ================= -->
+    <section class="section essentials" id="essentials">
+      <div class="container">
+        <div class="section-head reveal" data-anim="fade-up">
+          <span class="eyebrow">Health Essentials</span>
+          <h2 class="section-title">Shop by what your body needs</h2>
+          <p class="section-sub">Carefully sourced categories, each curated by our in-house pharmacists.</p>
+        </div>
+
+        <div class="cat-grid">
+          <a href="products.html#medicines" class="cat-card tilt reveal" data-anim="zoom-in">
+            <div class="cat-media"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80" alt="Prescription medicines" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="cat-body">
+              <h3>Medicines</h3>
+              <p>Prescription &amp; OTC medicines from licensed manufacturers.</p>
+              <span class="cat-link">Explore <svg class="arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <a href="products.html#vitamins" class="cat-card tilt reveal" data-anim="zoom-in">
+            <div class="cat-media"><img src="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=700&q=80" alt="Vitamins and supplements" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="cat-body">
+              <h3>Vitamins &amp; Supplements</h3>
+              <p>Daily multivitamins, minerals, omega-3 and immunity boosters.</p>
+              <span class="cat-link">Explore <svg class="arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <a href="products.html#personal-care" class="cat-card tilt reveal" data-anim="zoom-in">
+            <div class="cat-media"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt="Personal care products" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="cat-body">
+              <h3>Personal Care</h3>
+              <p>Dermatologist-approved skin, hair and hygiene essentials.</p>
+              <span class="cat-link">Explore <svg class="arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <a href="products.html#devices" class="cat-card tilt reveal" data-anim="zoom-in">
+            <div class="cat-media"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=700&q=80" alt="Health monitoring devices" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="cat-body">
+              <h3>Health Devices</h3>
+              <p>BP monitors, glucometers, thermometers and first-aid kits.</p>
+              <span class="cat-link">Explore <svg class="arrow" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. FEATURED PRODUCTS (3D flip) ================= -->
+    <section class="section products alt-bg" id="featured">
+      <div class="container">
+        <div class="section-head reveal" data-anim="fade-up">
+          <span class="eyebrow">Featured Products</span>
+          <h2 class="section-title">Pharmacist picks this month</h2>
+          <p class="section-sub">Hover a card to flip it and see what makes each product special.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="flip-card reveal" data-anim="flip-in">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="prod-media"><img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=80" alt="Pain relief tablets" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="badge">Bestseller</span></div>
+                <div class="prod-body"><h3>Pain Relief Tablets</h3><p class="price">₹149 <s>₹189</s></p></div>
+              </div>
+              <div class="flip-back">
+                <h3>Pain Relief Tablets</h3>
+                <p>Fast-acting relief from headaches, body aches and fever. Strip of 15.</p>
+                <a href="products.html" class="btn btn-primary btn-sm">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+          <article class="flip-card reveal" data-anim="flip-in">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="prod-media"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=600&q=80" alt="Daily multivitamin" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="badge">New</span></div>
+                <div class="prod-body"><h3>Daily Multivitamin</h3><p class="price">₹499 <s>₹620</s></p></div>
+              </div>
+              <div class="flip-back">
+                <h3>Daily Multivitamin</h3>
+                <p>24 essential vitamins &amp; minerals for energy and immunity. 60 tablets.</p>
+                <a href="products.html" class="btn btn-primary btn-sm">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+          <article class="flip-card reveal" data-anim="flip-in">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="prod-media"><img src="https://images.unsplash.com/photo-1612532275214-e4ca76d0e4d1?auto=format&fit=crop&w=600&q=80" alt="Gentle skin moisturiser" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="badge">-15%</span></div>
+                <div class="prod-body"><h3>Gentle Moisturiser</h3><p class="price">₹349 <s>₹410</s></p></div>
+              </div>
+              <div class="flip-back">
+                <h3>Gentle Moisturiser</h3>
+                <p>Fragrance-free, non-comedogenic hydration for sensitive skin. 200 ml.</p>
+                <a href="products.html" class="btn btn-primary btn-sm">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+          <article class="flip-card reveal" data-anim="flip-in">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="prod-media"><img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=600&q=80" alt="Omega-3 fish oil capsules" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="badge">Popular</span></div>
+                <div class="prod-body"><h3>Omega-3 Capsules</h3><p class="price">₹599 <s>₹720</s></p></div>
+              </div>
+              <div class="flip-back">
+                <h3>Omega-3 Capsules</h3>
+                <p>High-purity fish oil supporting heart, brain and joint health. 90 softgels.</p>
+                <a href="products.html" class="btn btn-primary btn-sm">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="center-btn reveal" data-anim="fade-up">
+          <a href="products.html" class="btn btn-secondary">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. WHY CHOOSE US + STATS ================= -->
+    <section class="section why" id="why">
+      <div class="container why-grid">
+        <div class="why-media reveal" data-anim="slide-left">
+          <div class="why-img-wrap">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Pharmacist consulting with a patient" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <div class="why-badge spin-3d">
+            <strong>14+</strong><span>Years of care</span>
+          </div>
+        </div>
+
+        <div class="why-content reveal" data-anim="slide-right">
+          <span class="eyebrow">Why Emeravita</span>
+          <h2 class="section-title">A pharmacy you can trust with your family's health</h2>
+          <p class="section-sub">Every order passes through a registered pharmacist. We store medicines in temperature-controlled conditions and never compromise on authenticity.</p>
+
+          <ul class="feature-list">
+            <li><span class="f-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><h4>Licensed &amp; Certified</h4><p>Government-licensed pharmacy with qualified staff.</p></div></li>
+            <li><span class="f-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2v6m0 8v6M2 12h6m8 0h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><div><h4>Cold-Chain Storage</h4><p>Insulin and vaccines kept at the right temperature.</p></div></li>
+            <li><span class="f-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><h4>Free Pharmacist Chat</h4><p>Ask about dosage, interactions and side effects.</p></div></li>
+          </ul>
+
+          <div class="stats">
+            <div class="stat"><span class="counter" data-target="50000">0</span><span class="plus">+</span><small>Happy customers</small></div>
+            <div class="stat"><span class="counter" data-target="8000">0</span><span class="plus">+</span><small>Products</small></div>
+            <div class="stat"><span class="counter" data-target="35">0</span><span class="plus">+</span><small>Cities served</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. HOW DELIVERY WORKS ================= -->
+    <section class="section delivery alt-bg" id="delivery">
+      <div class="container">
+        <div class="section-head reveal" data-anim="fade-up">
+          <span class="eyebrow">Home Delivery</span>
+          <h2 class="section-title">From our shelf to your door in 4 steps</h2>
+          <p class="section-sub">Same-day delivery in city limits. Free on orders above ₹499.</p>
+        </div>
+
+        <div class="delivery-wrap">
+          <div class="steps">
+            <div class="step reveal" data-anim="fade-up"><span class="step-num">01</span><div class="step-icon"><svg viewBox="0 0 24 24" width="26" height="26"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Search &amp; Select</h4><p>Find products or upload a prescription.</p></div>
+            <div class="step reveal" data-anim="fade-up"><span class="step-num">02</span><div class="step-icon"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Pharmacist Check</h4><p>Every order is verified for safety.</p></div>
+            <div class="step reveal" data-anim="fade-up"><span class="step-num">03</span><div class="step-icon"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><h4>Secure Packing</h4><p>Sealed, tamper-proof eco packaging.</p></div>
+            <div class="step reveal" data-anim="fade-up"><span class="step-num">04</span><div class="step-icon"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div><h4>Doorstep Delivery</h4><p>Track live and receive in hours.</p></div>
+          </div>
+
+          <div class="delivery-media reveal" data-anim="zoom-in">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80" alt="Packed delivery parcels ready for dispatch" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <div class="truck-track"><span class="truck"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="currentColor"/><circle cx="7" cy="17.5" r="2" fill="currentColor"/><circle cx="17" cy="17.5" r="2" fill="currentColor"/></svg></span></div>
+          </div>
+        </div>
+
+        <div class="center-btn reveal" data-anim="fade-up">
+          <a href="delivery.html" class="btn btn-secondary">Delivery Information</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. PRESCRIPTION ENQUIRY ================= -->
+    <section class="section prescription" id="prescription">
+      <div class="container rx-grid">
+        <div class="rx-content reveal" data-anim="slide-left">
+          <span class="eyebrow">Prescription Enquiry</span>
+          <h2 class="section-title">Have a prescription? We'll handle the rest.</h2>
+          <p class="section-sub">Send us your prescription and our pharmacist will call you back within 30 minutes with availability, pricing and substitutes if needed.</p>
+
+          <form class="rx-form" id="rxForm" novalidate>
+            <div class="field"><input type="text" id="rxName" placeholder=" " required /><label for="rxName">Full name</label></div>
+            <div class="field"><input type="tel" id="rxPhone" placeholder=" " required pattern="[0-9]{10}" /><label for="rxPhone">Phone number</label></div>
+            <label class="file-drop" for="rxFile">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span id="rxFileName">Upload prescription (JPG, PNG, PDF)</span>
+              <input type="file" id="rxFile" accept=".jpg,.jpeg,.png,.pdf" hidden />
+            </label>
+            <button type="submit" class="btn btn-primary">Send Enquiry
+              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form-msg" id="rxMsg" role="status"></p>
+          </form>
+        </div>
+
+        <div class="rx-media reveal" data-anim="slide-right">
+          <div class="rx-img-3d">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80" alt="Doctor writing a prescription" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <div class="rx-chip"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Reply in 30 min</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. MEMBERSHIP PLANS ================= -->
+    <section class="section membership alt-bg" id="membership">
+      <div class="container">
+        <div class="section-head reveal" data-anim="fade-up">
+          <span class="eyebrow">Membership Plans</span>
+          <h2 class="section-title">Save more on every refill</h2>
+          <p class="section-sub">Join Emeravita and enjoy extra discounts, free delivery and priority support.</p>
+        </div>
+
+        <div class="plan-grid">
+          <div class="plan tilt reveal" data-anim="rise-3d">
+            <h3>Basic</h3>
+            <p class="plan-price">₹0<span>/month</span></p>
+            <ul>
+              <li>5% off on medicines</li>
+              <li>Free delivery above ₹499</li>
+              <li>Order history &amp; reminders</li>
+            </ul>
+            <a href="membership.html" class="btn btn-secondary">Choose Basic</a>
+          </div>
+          <div class="plan plan-featured tilt reveal" data-anim="rise-3d">
+            <span class="plan-tag">Most Popular</span>
+            <h3>Emeravita</h3>
+            <p class="plan-price">₹149<span>/month</span></p>
+            <ul>
+              <li>15% off on medicines</li>
+              <li>Unlimited free delivery</li>
+              <li>Free monthly pharmacist consult</li>
+              <li>Priority dispatch</li>
+            </ul>
+            <a href="membership.html" class="btn btn-primary">Choose Emeravita</a>
+          </div>
+          <div class="plan tilt reveal" data-anim="rise-3d">
+            <h3>Family</h3>
+            <p class="plan-price">₹299<span>/month</span></p>
+            <ul>
+              <li>20% off for up to 5 members</li>
+              <li>Unlimited free delivery</li>
+              <li>Free annual health check-up</li>
+            </ul>
+            <a href="membership.html" class="btn btn-secondary">Choose Family</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. TESTIMONIALS ================= -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal" data-anim="fade-up">
+          <span class="eyebrow">Testimonials</span>
+          <h2 class="section-title">Loved by thousands of families</h2>
+        </div>
+
+        <div class="slider reveal" data-anim="zoom-in">
+          <div class="slides" id="slides">
+            <figure class="slide">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Priya S." loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <blockquote>"My father's monthly medicines arrive on time, every time. The pharmacist even called to explain a dosage change. Truly caring service."</blockquote>
+              <figcaption><strong>Priya S.</strong><span>Emeravita Member</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Rahul M." loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <blockquote>"Uploaded my prescription at 9 pm and had everything by 10:30. Genuine products and clear pricing — Emeravita is my go-to pharmacy now."</blockquote>
+              <figcaption><strong>Rahul M.</strong><span>Verified Customer</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Ananya K." loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <blockquote>"The Family plan saves us a lot. Vitamins for the kids, my skincare and my mother's BP medicine — all in one order."</blockquote>
+              <figcaption><strong>Ananya K.</strong><span>Family Member</span></figcaption>
+            </figure>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn" id="prevSlide" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="dots" id="dots"></div>
+            <button class="slider-btn" id="nextSlide" aria-label="Next testimonial"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 9. CTA (directly above footer) ================= -->
+    <section class="cta-section" id="cta">
+      <div class="cta-bg"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=80" alt="Person meditating peacefully" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+      <div class="cta-overlay"></div>
+      <div class="container cta-inner reveal" data-anim="zoom-in">
+        <span class="ring r1"></span><span class="ring r2"></span>
+        <h2>Find your balance. Start your Emeravita membership today.</h2>
+        <p>Get 15% off your first order plus free same-day delivery when you join Emeravita.</p>
+        <div class="cta-buttons">
+          <a href="membership.html" class="btn btn-primary">Join Now
+            <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="contact.html" class="btn btn-secondary">Talk to a Pharmacist</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+          <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+          <span class="brand-text">
+            <span class="brand-name">Emeravita</span>
+            <span class="brand-tagline">Wellness, polished like a gem.</span>
+          </span>
+        </a>
+        <p>Your trusted neighbourhood pharmacy — now online. Genuine medicines, vitamins and personal care delivered with care.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 01.5-.5z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M4 3h4.5l4.2 5.9L17.8 3H20l-6.3 7.4L21 21h-4.5l-4.6-6.4L6.3 21H4l6.9-8z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership Plans</a></li>
+          <li><a href="delivery.html">Home Delivery Info</a></li>
+          <li><a href="login.html">Member Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="products.html#medicines">Medicines</a></li>
+          <li><a href="products.html#vitamins">Vitamins &amp; Supplements</a></li>
+          <li><a href="products.html#personal-care">Personal Care</a></li>
+          <li><a href="products.html#devices">Health Devices</a></li>
+          <li><a href="products.html#ph-categories">First Aid</a></li>
+          <li><a href="products.html#ph-categories">Baby &amp; Mother Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>12 Wellness Avenue, Banjara Hills, Hyderabad</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="tel:+919000000000">+91 90000 00000</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><a href="mailto:care@zenora.com">care@zenora.com</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Open daily: 7 AM – 11 PM</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="contact.html">Send us a message</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> Emeravita Health Store. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5m-6 6l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <script src="script.js"></script>
+</body>
+</html>

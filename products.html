@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Emeravita Health Store</title>
+  <meta name="description" content="Shop genuine medicines, vitamins, personal care and health devices at Emeravita. Pharmacist verified, same-day delivery. Wellness, polished like a gem." />
+  <link rel="icon" type="image/png" href="assets/images/emeravita-icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/emeravita-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Shared site styles: header, footer, theme colours, buttons -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem("careplus-theme");
+        root.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      } catch (e) {
+        root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Products page styles -->
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body class="products-body">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+        <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+        <span class="brand-text">
+          <span class="brand-name">Emeravita</span>
+          <span class="brand-tagline">Wellness, polished like a gem.</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link active" aria-current="page">Products</a></li>
+          <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="rtlToggle" aria-label="Toggle text direction (RTL / LTR)" title="Switch LTR / RTL">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h14m0 0l-4-4m4 4l-4 4M20 16H6m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <!-- The ONLY header CTA -->
+        <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icon sprite used on this page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ph-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="currentColor"/></symbol>
+    <symbol id="ph-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.6-9.3A5.4 5.4 0 0112 5.6a5.4 5.4 0 019.6 5.6c-2.1 4.7-9.6 9.3-9.6 9.3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="ph-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.2a1.5 1.5 0 001.5 1.2h8.6a1.5 1.5 0 001.5-1.1L21 8H6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.4" fill="currentColor"/><circle cx="17" cy="19.5" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="ph-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ph-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="ph-page">
+
+    <!-- ================= 1. HERO – centred search with drifting product columns (full viewport) ================= -->
+    <section class="ph-hero" id="ph-hero">
+      <span class="ph-hero-glow" aria-hidden="true"></span>
+
+      <div class="ph-col ph-col-a" aria-hidden="true">
+        <div class="ph-col-track">
+          <figure class="ph-tile"><img src="https://images.pexels.com/photos/159211/pexels-photo-159211.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" onerror="this.classList.add('img-fallback')" /><figcaption>Medicines</figcaption></figure>
+          <figure class="ph-tile ph-tile-tall"><img src="https://images.pexels.com/photos/15569178/pexels-photo-15569178.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" onerror="this.classList.add('img-fallback')" /><figcaption>Skin Care</figcaption></figure>
+          <figure class="ph-tile"><img src="https://images.pexels.com/photos/7722675/pexels-photo-7722675.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" onerror="this.classList.add('img-fallback')" /><figcaption>Devices</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="ph-hero-center">
+        <span class="ph-pill-tag">
+          <span class="ph-dot"></span> 8,000+ genuine products in stock
+        </span>
+        <h1 class="ph-hero-title">
+          Everything your <span class="ph-word-swap"><span class="ph-swap-inner" id="phSwap">health</span></span><br />
+          needs, on one shelf.
+        </h1>
+        <p class="ph-hero-text">Shop pharmacist-verified medicines, vitamins, personal care and health devices. Delivered to your door the same day.</p>
+
+        <form class="ph-search" id="phSearch" role="search" autocomplete="off">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <label for="phSearchInput" class="ph-sr">Search products</label>
+          <input type="search" id="phSearchInput" placeholder="Search medicines, vitamins, skin care…" />
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <div class="ph-quick" aria-label="Popular searches">
+          <span>Popular:</span>
+          <button type="button" class="ph-quick-chip" data-q="omega">Omega-3</button>
+          <button type="button" class="ph-quick-chip" data-q="thermometer">Thermometer</button>
+          <button type="button" class="ph-quick-chip" data-q="serum">Skin serum</button>
+          <button type="button" class="ph-quick-chip" data-q="paracetamol">Paracetamol</button>
+        </div>
+
+        <ul class="ph-hero-perks">
+          <li><svg width="18" height="18"><use href="#ph-check"/></svg>100% genuine</li>
+          <li><svg width="18" height="18"><use href="#ph-check"/></svg>Free delivery over ₹499</li>
+          <li><svg width="18" height="18"><use href="#ph-check"/></svg>Easy 7-day returns</li>
+        </ul>
+      </div>
+
+      <div class="ph-col ph-col-b" aria-hidden="true">
+        <div class="ph-col-track">
+          <figure class="ph-tile ph-tile-tall"><img src="https://images.pexels.com/photos/16051978/pexels-photo-16051978.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" onerror="this.classList.add('img-fallback')" /><figcaption>Tablets</figcaption></figure>
+          <figure class="ph-tile"><img src="https://images.pexels.com/photos/5149757/pexels-photo-5149757.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" onerror="this.classList.add('img-fallback')" /><figcaption>First Aid</figcaption></figure>
+          <figure class="ph-tile"><img src="https://images.pexels.com/photos/6767794/pexels-photo-6767794.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" onerror="this.classList.add('img-fallback')" /><figcaption>Hair &amp; Body</figcaption></figure>
+        </div>
+      </div>
+
+      <a href="#ph-categories" class="ph-scroll" aria-label="Scroll to categories">
+        <span>Scroll</span>
+        <i></i>
+      </a>
+    </section>
+
+    <!-- ================= 2. SHOP BY CATEGORY ================= -->
+    <section class="ph-section ph-cats" id="ph-categories">
+      <div class="container">
+        <header class="ph-head ph-reveal" data-ph="up">
+          <span class="ph-label">Shop by Category</span>
+          <h2 class="ph-h2">Four aisles, carefully stocked</h2>
+          <p>Choose a category to see the products our pharmacists recommend most.</p>
+        </header>
+
+        <div class="ph-cat-grid">
+          <button type="button" class="ph-cat ph-cat-lg ph-reveal" data-ph="tilt-in" data-filter="medicines">
+            <img src="assets/images/category-medicines.png" alt="Assorted medicines in blister packs" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="ph-cat-info">
+              <span class="ph-cat-count">2,400+ items</span>
+              <strong>Medicines</strong>
+              <span class="ph-cat-go">Shop now <svg width="16" height="16"><use href="#ph-arrow"/></svg></span>
+            </span>
+          </button>
+          <button type="button" class="ph-cat ph-reveal" data-ph="tilt-in" data-filter="vitamins">
+            <img src="https://images.pexels.com/photos/29062090/pexels-photo-29062090.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Vitamin D supplement bottle" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="ph-cat-info">
+              <span class="ph-cat-count">1,100+ items</span>
+              <strong>Vitamins &amp; Supplements</strong>
+              <span class="ph-cat-go">Shop now <svg width="16" height="16"><use href="#ph-arrow"/></svg></span>
+            </span>
+          </button>
+          <button type="button" class="ph-cat ph-reveal" data-ph="tilt-in" data-filter="personal">
+            <img src="https://images.pexels.com/photos/9496253/pexels-photo-9496253.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Skincare serums and creams" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="ph-cat-info">
+              <span class="ph-cat-count">3,200+ items</span>
+              <strong>Personal Care</strong>
+              <span class="ph-cat-go">Shop now <svg width="16" height="16"><use href="#ph-arrow"/></svg></span>
+            </span>
+          </button>
+          <button type="button" class="ph-cat ph-cat-wide ph-reveal" data-ph="tilt-in" data-filter="devices">
+            <img src="https://images.pexels.com/photos/5721676/pexels-photo-5721676.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Blood pressure cuff" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="ph-cat-info">
+              <span class="ph-cat-count">900+ items</span>
+              <strong>Health Devices</strong>
+              <span class="ph-cat-go">Shop now <svg width="16" height="16"><use href="#ph-arrow"/></svg></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. ALL PRODUCTS – filter + sort ================= -->
+    <section class="ph-section ph-shop ph-tint" id="ph-shop">
+      <div class="container">
+        <header class="ph-head ph-reveal" data-ph="up">
+          <span class="ph-label">Best Sellers</span>
+          <h2 class="ph-h2">Popular with our customers</h2>
+        </header>
+
+        <div class="ph-toolbar ph-reveal" data-ph="up">
+          <div class="ph-filters" role="tablist" aria-label="Filter products by category">
+            <span class="ph-filter-ink" id="phInk" aria-hidden="true"></span>
+            <button type="button" class="ph-filter is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button type="button" class="ph-filter" role="tab" aria-selected="false" data-filter="medicines">Medicines</button>
+            <button type="button" class="ph-filter" role="tab" aria-selected="false" data-filter="vitamins">Vitamins</button>
+            <button type="button" class="ph-filter" role="tab" aria-selected="false" data-filter="personal">Personal Care</button>
+            <button type="button" class="ph-filter" role="tab" aria-selected="false" data-filter="devices">Devices</button>
+          </div>
+          <label class="ph-sort">
+            <span>Sort by</span>
+            <select id="phSort">
+              <option value="popular">Most popular</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="rating">Top rated</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="ph-result" id="phResult" aria-live="polite">Showing 8 products</p>
+
+        <div class="ph-grid" id="phGrid">
+          <article class="ph-card" data-cat="medicines" data-price="149" data-rating="4.8" data-pop="1" data-name="paracetamol 650 fever pain relief tablets">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/593451/pexels-photo-593451.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Paracetamol 650 tablets" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ph-badge">Bestseller</span>
+              <button type="button" class="ph-wish" aria-label="Add Paracetamol 650 to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Medicines</span>
+              <h3>Paracetamol 650 mg</h3>
+              <p class="ph-card-sub">Strip of 15 tablets</p>
+              <div class="ph-rating" aria-label="Rated 4.8 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.8 <span>(2.1k)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹149 <s>₹189</s></p>
+                <button type="button" class="ph-add" data-name="Paracetamol 650 mg" aria-label="Add Paracetamol 650 mg to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-card" data-cat="vitamins" data-price="599" data-rating="4.9" data-pop="2" data-name="omega-3 fish oil capsules heart">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/15897776/pexels-photo-15897776.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Omega-3 capsules in bottles" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ph-badge ph-badge-alt">-17%</span>
+              <button type="button" class="ph-wish" aria-label="Add Omega-3 to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Vitamins</span>
+              <h3>Omega-3 Fish Oil</h3>
+              <p class="ph-card-sub">90 softgels · 1000 mg</p>
+              <div class="ph-rating" aria-label="Rated 4.9 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.9 <span>(1.6k)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹599 <s>₹720</s></p>
+                <button type="button" class="ph-add" data-name="Omega-3 Fish Oil" aria-label="Add Omega-3 Fish Oil to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-card" data-cat="personal" data-price="799" data-rating="4.7" data-pop="3" data-name="hydrating skin serum set face care">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/17053663/pexels-photo-17053663.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Skincare serum set" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ph-badge">New</span>
+              <button type="button" class="ph-wish" aria-label="Add Hydrating Serum Set to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Personal Care</span>
+              <h3>Hydrating Serum Set</h3>
+              <p class="ph-card-sub">Serum + cream · 2 × 30 ml</p>
+              <div class="ph-rating" aria-label="Rated 4.7 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.7 <span>(840)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹799 <s>₹950</s></p>
+                <button type="button" class="ph-add" data-name="Hydrating Serum Set" aria-label="Add Hydrating Serum Set to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-card" data-cat="devices" data-price="1899" data-rating="4.8" data-pop="4" data-name="wrist blood pressure monitor bp digital">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/8900023/pexels-photo-8900023.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wrist blood pressure monitor in use" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ph-badge ph-badge-alt">-24%</span>
+              <button type="button" class="ph-wish" aria-label="Add Wrist BP Monitor to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Devices</span>
+              <h3>Wrist BP Monitor</h3>
+              <p class="ph-card-sub">Digital · 60-reading memory</p>
+              <div class="ph-rating" aria-label="Rated 4.8 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.8 <span>(1.2k)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹1,899 <s>₹2,499</s></p>
+                <button type="button" class="ph-add" data-name="Wrist BP Monitor" aria-label="Add Wrist BP Monitor to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-card" data-cat="medicines" data-price="119" data-rating="4.6" data-pop="5" data-name="cough cold relief capsules">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/13111784/pexels-photo-13111784.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cold relief capsules spilling from a bottle" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <button type="button" class="ph-wish" aria-label="Add Cold &amp; Flu Relief to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Medicines</span>
+              <h3>Cold &amp; Flu Relief</h3>
+              <p class="ph-card-sub">10 capsules · non-drowsy</p>
+              <div class="ph-rating" aria-label="Rated 4.6 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.6 <span>(980)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹119</p>
+                <button type="button" class="ph-add" data-name="Cold & Flu Relief" aria-label="Add Cold and Flu Relief to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-card" data-cat="vitamins" data-price="449" data-rating="4.7" data-pop="6" data-name="daily multivitamin capsules immunity">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/7230183/pexels-photo-7230183.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Assorted multivitamin capsules" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ph-badge">Popular</span>
+              <button type="button" class="ph-wish" aria-label="Add Daily Multivitamin to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Vitamins</span>
+              <h3>Daily Multivitamin</h3>
+              <p class="ph-card-sub">60 capsules · men &amp; women</p>
+              <div class="ph-rating" aria-label="Rated 4.7 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.7 <span>(1.9k)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹449 <s>₹520</s></p>
+                <button type="button" class="ph-add" data-name="Daily Multivitamin" aria-label="Add Daily Multivitamin to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-card" data-cat="personal" data-price="329" data-rating="4.5" data-pop="7" data-name="gentle body wash pump lotion">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/16378446/pexels-photo-16378446.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Body wash pump bottles" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <button type="button" class="ph-wish" aria-label="Add Gentle Body Wash to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Personal Care</span>
+              <h3>Gentle Body Wash</h3>
+              <p class="ph-card-sub">pH-balanced · 250 ml</p>
+              <div class="ph-rating" aria-label="Rated 4.5 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.5 <span>(620)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹329</p>
+                <button type="button" class="ph-add" data-name="Gentle Body Wash" aria-label="Add Gentle Body Wash to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-card" data-cat="devices" data-price="299" data-rating="4.6" data-pop="8" data-name="digital thermometer fever">
+            <div class="ph-card-media">
+              <img src="https://images.pexels.com/photos/3873159/pexels-photo-3873159.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Digital thermometer held in hands" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ph-badge ph-badge-alt">-25%</span>
+              <button type="button" class="ph-wish" aria-label="Add Digital Thermometer to wishlist" aria-pressed="false"><svg width="18" height="18"><use href="#ph-heart"/></svg></button>
+            </div>
+            <div class="ph-card-body">
+              <span class="ph-card-cat">Devices</span>
+              <h3>Digital Thermometer</h3>
+              <p class="ph-card-sub">10-second reading · beep alert</p>
+              <div class="ph-rating" aria-label="Rated 4.6 out of 5"><svg width="14" height="14"><use href="#ph-star"/></svg> 4.6 <span>(1.4k)</span></div>
+              <div class="ph-card-foot">
+                <p class="ph-price">₹299 <s>₹399</s></p>
+                <button type="button" class="ph-add" data-name="Digital Thermometer" aria-label="Add Digital Thermometer to cart"><svg width="18" height="18"><use href="#ph-cart"/></svg></button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="ph-empty" id="phEmpty" hidden>
+          <p>No products match your search. Try another word or <button type="button" class="ph-link" id="phReset">show all products</button>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. DEAL OF THE DAY ================= -->
+    <section class="ph-section ph-deal" id="ph-deal">
+      <div class="container ph-deal-grid">
+        <div class="ph-deal-media ph-reveal" data-ph="side-a">
+          <div class="ph-deal-img">
+            <img src="https://images.pexels.com/photos/7317129/pexels-photo-7317129.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Herbal skincare bottles on green moss" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <div class="ph-deal-burst" aria-hidden="true"><strong>35%</strong><span>OFF</span></div>
+        </div>
+
+        <div class="ph-deal-copy ph-reveal" data-ph="side-b">
+          <span class="ph-label">Deal of the Day</span>
+          <h2 class="ph-h2">Herbal Skin Ritual Kit</h2>
+          <p>Toner, serum and night cream made with botanical extracts. Dermatologist tested and gentle on sensitive skin.</p>
+
+          <div class="ph-timer" id="phTimer" aria-label="Time left for this deal">
+            <div><b id="phH">00</b><small>Hours</small></div>
+            <div><b id="phM">00</b><small>Minutes</small></div>
+            <div><b id="phS">00</b><small>Seconds</small></div>
+          </div>
+
+          <div class="ph-deal-price">
+            <strong>₹1,299</strong><s>₹1,999</s><span class="ph-save">You save ₹700</span>
+          </div>
+
+          <div class="ph-stock">
+            <div class="ph-stock-top"><span>Sold: <b>68</b></span><span>Available: <b>32</b></span></div>
+            <div class="ph-stock-bar"><span class="ph-stock-fill" data-fill="68"></span></div>
+          </div>
+
+          <div class="ph-deal-actions">
+            <button type="button" class="btn btn-primary ph-add-text" data-name="Herbal Skin Ritual Kit">Add to Cart
+              <svg class="arrow" width="18" height="18"><use href="#ph-arrow"/></svg>
+            </button>
+            <a href="contact.html" class="btn btn-secondary">Ask a Pharmacist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. CARE BUNDLES ================= -->
+    <section class="ph-section ph-bundles ph-tint" id="ph-bundles">
+      <div class="container">
+        <header class="ph-head ph-reveal" data-ph="up">
+          <span class="ph-label">Care Bundles</span>
+          <h2 class="ph-h2">Ready-made kits for every home</h2>
+          <p>Bundles put together by our pharmacists, so you never miss an essential.</p>
+        </header>
+
+        <div class="ph-bundle-grid">
+          <article class="ph-bundle ph-reveal" data-ph="flip">
+            <div class="ph-bundle-img">
+              <img src="https://images.pexels.com/photos/5664736/pexels-photo-5664736.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Family first aid kit with stethoscope and gloves" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            </div>
+            <div class="ph-bundle-body">
+              <h3>Family First-Aid Kit</h3>
+              <ul>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Bandages, gauze &amp; antiseptic</li>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Pain &amp; fever relief</li>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Gloves, scissors &amp; tape</li>
+              </ul>
+              <div class="ph-bundle-foot">
+                <p class="ph-price">₹899 <s>₹1,150</s></p>
+                <button type="button" class="btn btn-primary btn-sm ph-add-text" data-name="Family First-Aid Kit">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-bundle ph-bundle-hot ph-reveal" data-ph="flip">
+            <span class="ph-bundle-tag">Most loved</span>
+            <div class="ph-bundle-img">
+              <img src="https://images.pexels.com/photos/13458562/pexels-photo-13458562.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blood pressure gauge" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            </div>
+            <div class="ph-bundle-body">
+              <h3>Heart Care Kit</h3>
+              <ul>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Digital BP monitor</li>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Omega-3 (90 softgels)</li>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Free pharmacist check-in</li>
+              </ul>
+              <div class="ph-bundle-foot">
+                <p class="ph-price">₹2,299 <s>₹3,100</s></p>
+                <button type="button" class="btn btn-primary btn-sm ph-add-text" data-name="Heart Care Kit">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ph-bundle ph-reveal" data-ph="flip">
+            <div class="ph-bundle-img">
+              <img src="https://images.pexels.com/photos/5146534/pexels-photo-5146534.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel first aid supplies" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            </div>
+            <div class="ph-bundle-body">
+              <h3>Travel Health Pouch</h3>
+              <ul>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Motion sickness &amp; antacid</li>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>ORS sachets &amp; plasters</li>
+                <li><svg width="16" height="16"><use href="#ph-check"/></svg>Compact zip pouch</li>
+              </ul>
+              <div class="ph-bundle-foot">
+                <p class="ph-price">₹549 <s>₹690</s></p>
+                <button type="button" class="btn btn-primary btn-sm ph-add-text" data-name="Travel Health Pouch">Add</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. QUALITY PROMISE + PRESCRIPTIONS ================= -->
+    <section class="ph-section ph-promise" id="ph-promise">
+      <div class="container ph-promise-grid">
+        <div class="ph-promise-media ph-reveal" data-ph="side-a">
+          <div class="ph-promise-img">
+            <img src="https://images.pexels.com/photos/3735769/pexels-photo-3735769.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Scientist checking medicine samples in a lab" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <div class="ph-promise-card">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Batch verified</strong><small>Every product, every order</small></div>
+          </div>
+        </div>
+
+        <div class="ph-promise-copy ph-reveal" data-ph="side-b">
+          <span class="ph-label">Our Product Promise</span>
+          <h2 class="ph-h2">Genuine stock. Checked twice. Stored right.</h2>
+          <p>We buy only from licensed manufacturers and authorised distributors. Prescription medicines are dispensed only after a registered pharmacist checks your prescription.</p>
+
+          <div class="ph-promise-list">
+            <div class="ph-promise-item">
+              <span class="ph-pi-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><h4>Expiry checked</h4><p>At least 6 months of shelf life on delivery.</p></div>
+            </div>
+            <div class="ph-promise-item">
+              <span class="ph-pi-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2v6m0 8v6M2 12h6m8 0h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+              <div><h4>Cold-chain items</h4><p>Insulin and vaccines kept at 2–8 °C.</p></div>
+            </div>
+            <div class="ph-promise-item">
+              <span class="ph-pi-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v6h6M9 14h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <div><h4>Rx verified</h4><p>Upload your prescription; we confirm within 30 min.</p></div>
+            </div>
+            <div class="ph-promise-item">
+              <span class="ph-pi-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><h4>Easy returns</h4><p>Unopened items can be returned within 7 days.</p></div>
+            </div>
+          </div>
+
+          <a href="contact.html#prescription" class="btn btn-primary">Upload Prescription
+            <svg class="arrow" width="18" height="18"><use href="#ph-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. CTA (directly above footer) ================= -->
+    <section class="ph-cta" id="ph-cta">
+      <div class="container ph-cta-inner ph-reveal" data-ph="up">
+        <div class="ph-cta-img">
+          <img src="https://images.pexels.com/photos/5327862/pexels-photo-5327862.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Healthcare professional checking a patient's blood pressure" loading="lazy" onerror="this.classList.add('img-fallback')" />
+        </div>
+        <div class="ph-cta-copy">
+          <h2>Not sure what you need?</h2>
+          <p>Chat with an Emeravita pharmacist for free. Members also save up to 20% on every order.</p>
+          <div class="ph-cta-actions">
+            <a href="membership.html" class="btn btn-primary">Become a Member
+              <svg class="arrow" width="18" height="18"><use href="#ph-arrow"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">Talk to a Pharmacist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Add-to-cart toast -->
+  <div class="ph-toast" id="phToast" role="status" aria-live="polite">
+    <svg width="18" height="18" aria-hidden="true"><use href="#ph-check"/></svg>
+    <span id="phToastText">Added to cart</span>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+          <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+          <span class="brand-text">
+            <span class="brand-name">Emeravita</span>
+            <span class="brand-tagline">Wellness, polished like a gem.</span>
+          </span>
+        </a>
+        <p>Your trusted neighbourhood pharmacy — now online. Genuine medicines, vitamins and personal care delivered with care.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 01.5-.5z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M4 3h4.5l4.2 5.9L17.8 3H20l-6.3 7.4L21 21h-4.5l-4.6-6.4L6.3 21H4l6.9-8z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership Plans</a></li>
+          <li><a href="delivery.html">Home Delivery Info</a></li>
+          <li><a href="login.html">Member Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="products.html#medicines">Medicines</a></li>
+          <li><a href="products.html#vitamins">Vitamins &amp; Supplements</a></li>
+          <li><a href="products.html#personal-care">Personal Care</a></li>
+          <li><a href="products.html#devices">Health Devices</a></li>
+          <li><a href="products.html#ph-categories">First Aid</a></li>
+          <li><a href="products.html#ph-categories">Baby &amp; Mother Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>12 Wellness Avenue, Banjara Hills, Hyderabad</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="tel:+919000000000">+91 90000 00000</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><a href="mailto:care@zenora.com">care@zenora.com</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Open daily: 7 AM – 11 PM</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="contact.html">Send us a message</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> Emeravita Health Store. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5m-6 6l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <script src="products.js"></script>
+</body>
+</html>

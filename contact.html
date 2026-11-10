@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Emeravita Health Store</title>
+  <meta name="description" content="Contact Emeravita pharmacy: call, WhatsApp or email our pharmacists, send a prescription enquiry, or find a store near you. Wellness, polished like a gem." />
+  <link rel="icon" type="image/png" href="assets/images/emeravita-icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/emeravita-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Shared site styles: header, footer, theme colours, buttons -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem("careplus-theme");
+        root.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      } catch (e) {
+        root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Contact page styles -->
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body class="contact-body">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+        <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+        <span class="brand-text">
+          <span class="brand-name">Emeravita</span>
+          <span class="brand-tagline">Wellness, polished like a gem.</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown">
+              <li><a href="index.html">Home 1</a></li>
+              <li><a href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="rtlToggle" aria-label="Toggle text direction (RTL / LTR)" title="Switch LTR / RTL">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h14m0 0l-4-4m4 4l-4 4M20 16H6m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <!-- The ONLY header CTA -->
+        <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icon sprite used on this page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ct-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="ct-chat" viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 10.5c.5 2 2.5 4 4.5 4.6l1.3-1.2 2 .9c-.3 1.2-1.3 1.9-2.6 1.7-3-.5-5.6-3.1-6-6.1-.2-1.2.5-2.3 1.7-2.6l.9 2-1.1 1.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="ct-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="ct-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="ct-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="ct-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ct-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ct-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 19H16a3 3 0 000-6H8a3 3 0 010-6h7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <main class="ct-page">
+
+    <!-- ================= 1. HERO – orbiting contact icons around a portrait (full viewport) ================= -->
+    <section class="ct-hero" id="ct-hero">
+      <span class="ct-hero-band" aria-hidden="true"></span>
+      <span class="ct-hero-dots" aria-hidden="true"></span>
+
+      <div class="container ct-hero-grid">
+        <div class="ct-hero-copy">
+          <span class="ct-live" id="ctLive"><span class="ct-live-dot"></span><span id="ctLiveText">Pharmacists online now</span></span>
+          <h1 class="ct-hero-title">
+            <span class="ct-word">Let's</span> <span class="ct-word">talk</span> <span class="ct-word">about</span><br />
+            <span class="ct-word"><em>your</em></span> <span class="ct-word"><em>health.</em></span>
+          </h1>
+          <p class="ct-hero-text">Questions about a prescription, an order or a product? Our pharmacists and care team usually reply within 5 minutes, every day from 7 AM to 11 PM.</p>
+
+          <div class="ct-quick">
+            <a href="tel:+919000000000" class="ct-quick-card">
+              <span class="ct-q-icon"><svg width="22" height="22"><use href="#ct-phone"/></svg></span>
+              <span><small>Call us</small><strong><bdi dir="ltr">+91 90000 00000</bdi></strong></span>
+            </a>
+            <a href="https://wa.me/919000000000" class="ct-quick-card" target="_blank" rel="noopener">
+              <span class="ct-q-icon"><svg width="22" height="22"><use href="#ct-chat"/></svg></span>
+              <span><small>WhatsApp</small><strong>Chat instantly</strong></span>
+            </a>
+          </div>
+
+          <div class="ct-hero-actions">
+            <a href="#ct-form" class="btn btn-primary">Send a Message
+              <svg class="arrow" width="18" height="18"><use href="#ct-arrow"/></svg>
+            </a>
+            <a href="#ct-map" class="btn btn-secondary">Find a Store</a>
+          </div>
+        </div>
+
+        <div class="ct-orbit-wrap" id="ctOrbitWrap">
+          <div class="ct-orbit-scene" id="ctOrbitScene">
+            <span class="ct-ring ct-ring-1" aria-hidden="true"></span>
+            <span class="ct-ring ct-ring-2" aria-hidden="true"></span>
+            <div class="ct-portrait">
+              <img src="https://images.pexels.com/photos/8101312/pexels-photo-8101312.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Emeravita care team member smiling with a headset" onerror="this.classList.add('img-fallback')" />
+            </div>
+            <div class="ct-orbit" aria-hidden="true">
+              <span class="ct-planet ct-p1"><svg width="22" height="22"><use href="#ct-phone"/></svg></span>
+              <span class="ct-planet ct-p2"><svg width="22" height="22"><use href="#ct-mail"/></svg></span>
+              <span class="ct-planet ct-p3"><svg width="22" height="22"><use href="#ct-chat"/></svg></span>
+              <span class="ct-planet ct-p4"><svg width="22" height="22"><use href="#ct-pin"/></svg></span>
+            </div>
+            <div class="ct-bubble ct-bubble-1"><b>Hi Priya!</b> Your refill is packed and on its way.</div>
+            <div class="ct-bubble ct-bubble-2"><span class="ct-typing"><i></i><i></i><i></i></span> Pharmacist is typing…</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. CONTACT CHANNELS – 3D flip cards ================= -->
+    <section class="ct-section ct-channels" id="ct-channels">
+      <div class="container">
+        <header class="ct-head ct-reveal" data-ct="up">
+          <span class="ct-eyebrow">Reach Us Your Way</span>
+          <h2 class="ct-h2">Four easy ways to get help</h2>
+          <p>Hover or tap a card to see the details.</p>
+        </header>
+
+        <div class="ct-channel-grid">
+          <figure class="ct-channel-img ct-reveal" data-ct="zoom">
+            <img src="https://images.pexels.com/photos/3764486/pexels-photo-3764486.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Smiling woman talking on her phone" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <figcaption><strong>98%</strong><span>of questions solved in the first conversation</span></figcaption>
+          </figure>
+
+          <div class="ct-flip ct-reveal" data-ct="flip" tabindex="0">
+            <div class="ct-flip-inner">
+              <div class="ct-flip-front">
+                <span class="ct-f-icon"><svg width="30" height="30"><use href="#ct-phone"/></svg></span>
+                <h3>Call</h3><p>Talk to a pharmacist</p>
+              </div>
+              <div class="ct-flip-back">
+                <h3><bdi dir="ltr">+91 90000 00000</bdi></h3>
+                <p>7 AM – 11 PM, all days.<br />Average wait under 1 minute.</p>
+                <a href="tel:+919000000000" class="btn btn-primary btn-sm">Call Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="ct-flip ct-reveal" data-ct="flip" tabindex="0">
+            <div class="ct-flip-inner">
+              <div class="ct-flip-front">
+                <span class="ct-f-icon"><svg width="30" height="30"><use href="#ct-chat"/></svg></span>
+                <h3>WhatsApp</h3><p>Chat &amp; share photos</p>
+              </div>
+              <div class="ct-flip-back">
+                <h3>Chat with us</h3>
+                <p>Send a prescription photo and get a quote in minutes.</p>
+                <a href="https://wa.me/919000000000" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Open WhatsApp</a>
+              </div>
+            </div>
+          </div>
+          <div class="ct-flip ct-reveal" data-ct="flip" tabindex="0">
+            <div class="ct-flip-inner">
+              <div class="ct-flip-front">
+                <span class="ct-f-icon"><svg width="30" height="30"><use href="#ct-mail"/></svg></span>
+                <h3>Email</h3><p>For detailed queries</p>
+              </div>
+              <div class="ct-flip-back">
+                <h3>care@zenora.com</h3>
+                <p>We reply within 4 working hours, with a ticket number.</p>
+                <a href="mailto:care@zenora.com" class="btn btn-primary btn-sm">Write to Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="ct-flip ct-reveal" data-ct="flip" tabindex="0">
+            <div class="ct-flip-inner">
+              <div class="ct-flip-front">
+                <span class="ct-f-icon"><svg width="30" height="30"><use href="#ct-pin"/></svg></span>
+                <h3>Visit</h3><p>3 stores near you</p>
+              </div>
+              <div class="ct-flip-back">
+                <h3>Walk in anytime</h3>
+                <p>Banjara Hills, Kukatpally and Vijayawada.</p>
+                <a href="#ct-map" class="btn btn-primary btn-sm">See Map</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. CONTACT FORM + PRESCRIPTION ENQUIRY ================= -->
+    <section class="ct-section ct-form-sec ct-tint" id="ct-form">
+      <div class="container ct-form-grid">
+        <aside class="ct-form-aside ct-reveal" data-ct="side-a">
+          <div class="ct-aside-img">
+            <img src="assets/images/contact-message-pharmacist.png" alt="Pharmacist writing notes at a pharmacy counter" loading="lazy" onerror="this.classList.add('img-fallback')" />
+            <span class="ct-aside-badge"><svg width="18" height="18"><use href="#ct-clock"/></svg> Avg. reply: 5 min</span>
+          </div>
+          <h2 class="ct-h2">Send us a message</h2>
+          <p>Tell us what you need. For prescription medicines, switch to the <strong>Prescription</strong> tab and upload a clear photo of your prescription.</p>
+          <ul class="ct-promise">
+            <li><svg width="18" height="18"><use href="#ct-clock"/></svg>Reply within 30 minutes during store hours</li>
+            <li><svg width="18" height="18"><use href="#ct-phone"/></svg>A pharmacist calls you back if needed</li>
+            <li><svg width="18" height="18"><use href="#ct-mail"/></svg>Your details stay private and secure</li>
+          </ul>
+        </aside>
+
+        <div class="ct-form-card ct-reveal" data-ct="side-b">
+          <div class="ct-tabs" role="tablist" aria-label="Choose enquiry type">
+            <span class="ct-tab-ink" id="ctInk" aria-hidden="true"></span>
+            <button type="button" class="ct-tab is-active" role="tab" aria-selected="true" aria-controls="ctGeneral" id="tabGeneral">General Enquiry</button>
+            <button type="button" class="ct-tab" role="tab" aria-selected="false" aria-controls="ctRx" id="tabRx">Prescription</button>
+          </div>
+
+          <!-- General enquiry -->
+          <form class="ct-form is-shown" id="ctGeneral" role="tabpanel" aria-labelledby="tabGeneral" novalidate>
+            <div class="ct-row">
+              <div class="ct-field"><input type="text" id="gName" placeholder=" " required /><label for="gName">Full name</label><span class="ct-err">Please enter your name</span></div>
+              <div class="ct-field"><input type="tel" id="gPhone" placeholder=" " required pattern="[0-9]{10}" /><label for="gPhone">Phone (10 digits)</label><span class="ct-err">Enter a valid 10-digit number</span></div>
+            </div>
+            <div class="ct-field"><input type="email" id="gEmail" placeholder=" " required /><label for="gEmail">Email address</label><span class="ct-err">Enter a valid email</span></div>
+            <div class="ct-field ct-select">
+              <select id="gTopic" required>
+                <option value="" selected disabled hidden></option>
+                <option>Order &amp; delivery</option>
+                <option>Product question</option>
+                <option>Membership</option>
+                <option>Returns &amp; refunds</option>
+                <option>Something else</option>
+              </select>
+              <label for="gTopic">What is it about?</label><span class="ct-err">Please choose a topic</span>
+            </div>
+            <div class="ct-field"><textarea id="gMsg" rows="4" placeholder=" " maxlength="500" required></textarea><label for="gMsg">Your message</label><span class="ct-count" id="gCount">0 / 500</span><span class="ct-err">Please write a short message</span></div>
+            <button type="submit" class="btn btn-primary ct-submit">Send Message
+              <svg class="arrow" width="18" height="18"><use href="#ct-arrow"/></svg>
+            </button>
+          </form>
+
+          <!-- Prescription enquiry -->
+          <form class="ct-form" id="ctRx" role="tabpanel" aria-labelledby="tabRx" novalidate hidden>
+            <div class="ct-row">
+              <div class="ct-field"><input type="text" id="rName" placeholder=" " required /><label for="rName">Patient name</label><span class="ct-err">Please enter the patient's name</span></div>
+              <div class="ct-field"><input type="tel" id="rPhone" placeholder=" " required pattern="[0-9]{10}" /><label for="rPhone">Phone (10 digits)</label><span class="ct-err">Enter a valid 10-digit number</span></div>
+            </div>
+            <label class="ct-drop" id="ctDrop" for="rFile">
+              <span class="ct-drop-icon"><svg width="30" height="30"><use href="#ct-upload"/></svg></span>
+              <strong id="ctDropText">Drag &amp; drop your prescription</strong>
+              <small>or click to browse · JPG, PNG or PDF · max 5 MB</small>
+              <input type="file" id="rFile" accept=".jpg,.jpeg,.png,.pdf" hidden />
+            </label>
+            <span class="ct-err ct-err-drop" id="ctDropErr">Please upload your prescription</span>
+            <div class="ct-field"><input type="text" id="rAddr" placeholder=" " /><label for="rAddr">Delivery area / pincode (optional)</label></div>
+            <div class="ct-field"><textarea id="rNote" rows="3" placeholder=" "></textarea><label for="rNote">Notes for the pharmacist (optional)</label></div>
+            <button type="submit" class="btn btn-primary ct-submit">Send Prescription
+              <svg class="arrow" width="18" height="18"><use href="#ct-arrow"/></svg>
+            </button>
+          </form>
+
+          <!-- Success state -->
+          <div class="ct-success" id="ctSuccess" hidden>
+            <svg class="ct-check" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 21-23"/></svg>
+            <h3>Thank you, <span id="ctSuccessName">friend</span>!</h3>
+            <p id="ctSuccessMsg">Our care team will get back to you within 30 minutes.</p>
+            <button type="button" class="btn btn-secondary" id="ctAgain">Send another message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. MAP + STORE LOCATOR ================= -->
+    <section class="ct-section ct-map-sec" id="ct-map">
+      <div class="container">
+        <header class="ct-head ct-reveal" data-ct="up">
+          <span class="ct-eyebrow">Find a Store</span>
+          <h2 class="ct-h2">Visit an Emeravita pharmacy near you</h2>
+          <p>Choose a store to see it on the map and get directions.</p>
+        </header>
+
+        <div class="ct-map-grid">
+          <div class="ct-stores ct-reveal" data-ct="side-a">
+            <div class="ct-store-photo">
+              <img src="https://images.pexels.com/photos/11648283/pexels-photo-11648283.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Green pharmacy cross sign outside a store" loading="lazy" onerror="this.classList.add('img-fallback')" />
+              <span class="ct-store-glow" aria-hidden="true"></span>
+            </div>
+
+            <button type="button" class="ct-store is-active" data-q="Banjara Hills, Hyderabad, Telangana" data-name="Banjara Hills (Flagship)">
+              <span class="ct-store-pin"><svg width="20" height="20"><use href="#ct-pin"/></svg></span>
+              <span class="ct-store-info"><strong>Banjara Hills · Flagship</strong><small>12 Wellness Avenue, Road No. 3, Hyderabad</small><em>Open 7 AM – 11 PM</em></span>
+            </button>
+            <button type="button" class="ct-store" data-q="Kukatpally, Hyderabad, Telangana" data-name="Kukatpally">
+              <span class="ct-store-pin"><svg width="20" height="20"><use href="#ct-pin"/></svg></span>
+              <span class="ct-store-info"><strong>Kukatpally</strong><small>KPHB Colony, Phase 6, Hyderabad</small><em>Open 8 AM – 10 PM</em></span>
+            </button>
+            <button type="button" class="ct-store" data-q="Benz Circle, Vijayawada, Andhra Pradesh" data-name="Vijayawada">
+              <span class="ct-store-pin"><svg width="20" height="20"><use href="#ct-pin"/></svg></span>
+              <span class="ct-store-info"><strong>Vijayawada</strong><small>Near Benz Circle, MG Road, Vijayawada</small><em>Open 8 AM – 10 PM</em></span>
+            </button>
+          </div>
+
+          <div class="ct-map-frame ct-reveal" data-ct="side-b">
+            <iframe id="ctMap" title="Map showing the selected Emeravita store"
+              src="https://www.google.com/maps?q=Banjara%20Hills%2C%20Hyderabad%2C%20Telangana&z=14&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <span class="ct-map-loader" id="ctMapLoader" aria-hidden="true"><span></span></span>
+            <div class="ct-map-card">
+              <span class="ct-map-ping" aria-hidden="true"></span>
+              <div>
+                <small>Selected store</small>
+                <strong id="ctMapName">Banjara Hills (Flagship)</strong>
+              </div>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Banjara%20Hills%2C%20Hyderabad%2C%20Telangana" class="btn btn-primary btn-sm" id="ctDir" target="_blank" rel="noopener">
+                <svg width="16" height="16"><use href="#ct-route"/></svg> Directions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. HOURS + LIVE STATUS ================= -->
+    <section class="ct-section ct-hours ct-tint" id="ct-hours">
+      <div class="container ct-hours-grid">
+        <div class="ct-hours-card ct-reveal" data-ct="side-a">
+          <div class="ct-hours-top">
+            <div>
+              <span class="ct-eyebrow">Opening Hours</span>
+              <h2 class="ct-h2">We're here when you need us</h2>
+            </div>
+            <span class="ct-status" id="ctStatus"><i></i><span id="ctStatusText">Checking…</span></span>
+          </div>
+          <ul class="ct-week" id="ctWeek">
+            <li data-day="1"><span>Monday</span><b>7:00 AM – 11:00 PM</b></li>
+            <li data-day="2"><span>Tuesday</span><b>7:00 AM – 11:00 PM</b></li>
+            <li data-day="3"><span>Wednesday</span><b>7:00 AM – 11:00 PM</b></li>
+            <li data-day="4"><span>Thursday</span><b>7:00 AM – 11:00 PM</b></li>
+            <li data-day="5"><span>Friday</span><b>7:00 AM – 11:00 PM</b></li>
+            <li data-day="6"><span>Saturday</span><b>7:00 AM – 11:00 PM</b></li>
+            <li data-day="0"><span>Sunday</span><b>8:00 AM – 10:00 PM</b></li>
+          </ul>
+          <p class="ct-hours-note"><svg width="16" height="16"><use href="#ct-chat"/></svg> Emergency medicine requests on WhatsApp are answered 24/7.</p>
+        </div>
+
+        <div class="ct-hours-media ct-reveal" data-ct="side-b">
+          <div class="ct-hours-img">
+            <img src="https://images.pexels.com/photos/12725400/pexels-photo-12725400.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Courier delivering a package to a customer's door" loading="lazy" onerror="this.classList.add('img-fallback')" />
+          </div>
+          <div class="ct-stat-stack">
+            <div class="ct-stat"><strong><span class="ct-count" data-target="5">0</span> min</strong><span>Avg. chat reply</span></div>
+            <div class="ct-stat"><strong><span class="ct-count" data-target="30">0</span> min</strong><span>Prescription check</span></div>
+            <div class="ct-stat"><strong><span class="ct-count" data-target="2">0</span> hrs</strong><span>Typical delivery</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. CARE TEAM ================= -->
+    <section class="ct-section ct-team" id="ct-team">
+      <div class="container">
+        <header class="ct-head ct-reveal" data-ct="up">
+          <span class="ct-eyebrow">Your Care Team</span>
+          <h2 class="ct-h2">Real people on the other end</h2>
+          <p>Speak to qualified pharmacists and friendly support staff in English, Telugu and Hindi.</p>
+        </header>
+
+        <div class="ct-team-grid">
+          <article class="ct-person ct-reveal" data-ct="rise">
+            <div class="ct-person-img"><img src="https://images.pexels.com/photos/19963126/pexels-photo-19963126.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dr. Sneha Iyer" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="ct-person-body">
+              <h3>Dr. Sneha Iyer</h3>
+              <p class="ct-role">Lead Pharmacist</p>
+              <div class="ct-langs"><span>English</span><span>Telugu</span><span>Tamil</span></div>
+              <a href="tel:+919000000000" class="ct-person-call"><svg width="16" height="16"><use href="#ct-phone"/></svg> Request a call</a>
+            </div>
+          </article>
+          <article class="ct-person ct-reveal" data-ct="rise">
+            <div class="ct-person-img"><img src="https://images.pexels.com/photos/14438788/pexels-photo-14438788.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Dr. Vikram Rao" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="ct-person-body">
+              <h3>Dr. Vikram Rao</h3>
+              <p class="ct-role">Clinical Pharmacist</p>
+              <div class="ct-langs"><span>English</span><span>Hindi</span><span>Telugu</span></div>
+              <a href="tel:+919000000000" class="ct-person-call"><svg width="16" height="16"><use href="#ct-phone"/></svg> Request a call</a>
+            </div>
+          </article>
+          <article class="ct-person ct-reveal" data-ct="rise">
+            <div class="ct-person-img"><img src="https://images.pexels.com/photos/7682211/pexels-photo-7682211.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Ayesha Khan" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+            <div class="ct-person-body">
+              <h3>Ayesha Khan</h3>
+              <p class="ct-role">Customer Care Lead</p>
+              <div class="ct-langs"><span>English</span><span>Hindi</span><span>Urdu</span></div>
+              <a href="tel:+919000000000" class="ct-person-call"><svg width="16" height="16"><use href="#ct-phone"/></svg> Request a call</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. URGENT HELP CTA (directly above footer) ================= -->
+    <section class="ct-cta" id="ct-cta">
+      <div class="ct-cta-bg"><img src="https://images.pexels.com/photos/15366536/pexels-photo-15366536.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Pharmacy storefront lit up at dusk" loading="lazy" onerror="this.classList.add('img-fallback')" /></div>
+      <div class="container ct-cta-inner ct-reveal" data-ct="zoom">
+        <a href="tel:+919000000000" class="ct-cta-phone" aria-label="Call Emeravita now">
+          <span class="ct-pulse" aria-hidden="true"></span><span class="ct-pulse ct-pulse-2" aria-hidden="true"></span>
+          <svg width="34" height="34"><use href="#ct-phone"/></svg>
+        </a>
+        <div class="ct-cta-copy">
+          <h2>Need medicines urgently?</h2>
+          <p>Call or WhatsApp us and a pharmacist will help you right away. Same-day delivery inside city limits.</p>
+        </div>
+        <div class="ct-cta-actions">
+          <a href="tel:+919000000000" class="btn btn-primary">Call <bdi dir="ltr">+91 90000 00000</bdi></a>
+          <a href="https://wa.me/919000000000" class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Emeravita Health Store home">
+          <picture class="brand-logo-wrap">
+            <source srcset="assets/images/emeravita-icon.png" type="image/png" />
+            <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" class="brand-logo" width="120" height="120" decoding="async" />
+          </picture>
+          <span class="brand-text">
+            <span class="brand-name">Emeravita</span>
+            <span class="brand-tagline">Wellness, polished like a gem.</span>
+          </span>
+        </a>
+        <p>Your trusted neighbourhood pharmacy — now online. Genuine medicines, vitamins and personal care delivered with care.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 01.5-.5z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M4 3h4.5l4.2 5.9L17.8 3H20l-6.3 7.4L21 21h-4.5l-4.6-6.4L6.3 21H4l6.9-8z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9h4v12H4zM6 3a2.2 2.2 0 110 4.4A2.2 2.2 0 016 3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-4z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership Plans</a></li>
+          <li><a href="delivery.html">Home Delivery Info</a></li>
+          <li><a href="login.html">Member Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="products.html#medicines">Medicines</a></li>
+          <li><a href="products.html#vitamins">Vitamins &amp; Supplements</a></li>
+          <li><a href="products.html#personal-care">Personal Care</a></li>
+          <li><a href="products.html#devices">Health Devices</a></li>
+          <li><a href="products.html#ph-categories">First Aid</a></li>
+          <li><a href="products.html#ph-categories">Baby &amp; Mother Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>12 Wellness Avenue, Banjara Hills, Hyderabad</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="tel:+919000000000">+91 90000 00000</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><a href="mailto:care@zenora.com">care@zenora.com</a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Open daily: 7 AM – 11 PM</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="contact.html">Send us a message</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> Emeravita Health Store. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5m-6 6l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <script src="contact.js"></script>
+</body>
+</html>
