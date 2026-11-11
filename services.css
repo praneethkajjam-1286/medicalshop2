@@ -244,7 +244,17 @@ a:hover > .sv-arrow-ic, .btn:hover > .sv-arrow-ic { transform: translateX(4px); 
   opacity: .75; transition: opacity .5s;
 }
 .sv-tile:hover img, .sv-tile:focus-visible img { transform: scale(1.1); }
-.sv-tile:hover::after, .sv-tile:focus-visible::after { opacity: 1; }
+[data-theme="light"] .sv-tile:hover::after,
+[data-theme="light"] .sv-tile:focus-visible::after,
+.sv-tile:hover::after,
+.sv-tile:focus-visible::after {
+  opacity: 1;
+  background: linear-gradient(180deg, transparent 40%, color-mix(in srgb, var(--card-bg) 92%, transparent));
+}
+[data-theme="dark"] .sv-tile:hover::after,
+[data-theme="dark"] .sv-tile:focus-visible::after {
+  background: linear-gradient(180deg, transparent 40%, color-mix(in srgb, var(--panel-b) 88%, transparent));
+}
 .sv-tile:focus-visible { outline: 3px solid var(--secondary); outline-offset: 3px; }
 .sv-tile-cap {
   position: absolute; z-index: 1; inset-inline: 20px; inset-block-end: 18px; color: var(--panel-text);
@@ -254,6 +264,20 @@ a:hover > .sv-arrow-ic, .btn:hover > .sv-arrow-ic { transform: translateX(4px); 
 .sv-tile-cap small { font-size: .85rem; color: color-mix(in srgb, var(--footer-text) 85%, transparent); max-height: 0; overflow: hidden; opacity: 0; transition: max-height .5s var(--ease), opacity .5s; }
 .sv-tile:hover .sv-tile-cap, .sv-tile:focus-visible .sv-tile-cap { transform: none; }
 .sv-tile:hover .sv-tile-cap small, .sv-tile:focus-visible .sv-tile-cap small { max-height: 3em; opacity: 1; }
+.sv-tile:hover .sv-tile-cap,
+.sv-tile:hover .sv-tile-cap *,
+.sv-tile:focus-visible .sv-tile-cap,
+.sv-tile:focus-visible .sv-tile-cap * {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+[data-theme="dark"] .sv-tile:hover .sv-tile-cap,
+[data-theme="dark"] .sv-tile:hover .sv-tile-cap *,
+[data-theme="dark"] .sv-tile:focus-visible .sv-tile-cap,
+[data-theme="dark"] .sv-tile:focus-visible .sv-tile-cap * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
 .sv-tile-zoom {
   position: absolute; z-index: 1; inset-block-start: 14px; inset-inline-end: 14px;
   width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;

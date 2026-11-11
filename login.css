@@ -515,3 +515,15 @@ svg { display: block; fill: none; stroke: currentColor; stroke-width: 2; stroke-
   color: #000 !important;
   -webkit-text-fill-color: #000 !important;
 }
+
+:is(.glass-card, .panel, .card),
+:is(.glass-card, .panel, .card) :not(button):not(button *):not(.btn):not(.btn *):not(svg):not(svg *) {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+[data-theme="dark"] :is(.glass-card, .panel, .card),
+[data-theme="dark"] :is(.glass-card, .panel, .card) :not(button):not(button *):not(.btn):not(.btn *):not(svg):not(svg *) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
