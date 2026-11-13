@@ -2,267 +2,152 @@
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Member Login | Emeravita Health Store</title>
-  <meta name="description" content="Sign in to your Emeravita Health Store member account to track orders, manage prescriptions and refills." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta name="description" content="Sign in to your Emeravita account to track orders, refill prescriptions and manage your membership." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#174F46" />
   <link rel="icon" type="image/png" href="assets/images/emeravita-icon.png" />
   <link rel="apple-touch-icon" href="assets/images/emeravita-icon.png" />
-  <!-- Apply saved theme & direction before paint (prevents colour flash) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script>
+    /* Apply saved theme + direction before first paint (same keys as the home page) */
     (function () {
-      var r = document.documentElement;
-      try {
-        var t = localStorage.getItem("careplus-theme");
-        var d = localStorage.getItem("careplus-dir");
-        r.setAttribute("data-theme", t === "dark" || t === "light" ? t : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
-        if (d) r.setAttribute("dir", d);
-      } catch (e) {}
+      var d = document.documentElement, t = null, r = null;
+      try { t = localStorage.getItem("careplus-theme"); r = localStorage.getItem("zenora-dir"); } catch (e) {}
+      d.setAttribute("data-theme", t === "dark" || t === "light" ? t : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      if (r === "rtl" || r === "ltr") d.setAttribute("dir", r);
     })();
   </script>
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="auth.css" />
 </head>
 <body>
 
-  <!-- Only controls: direction + theme -->
-  <div class="corner-controls">
-    <button class="icon-btn" id="rtlToggle" aria-label="Switch text direction (RTL / LTR)" title="Switch to right-to-left" aria-pressed="false">
-      <svg class="dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 3 12l4 5M3 12h18m-4-5 4 5-4 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <!-- Animated background -->
+  <div class="auth-bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <svg class="gem gem-1" viewBox="0 0 400 360">
+      <path d="M30 130H370M130 40L100 130M130 40L165 130L200 40L235 130L270 40M270 40L300 130M100 130L200 330M165 130L200 330M235 130L200 330M300 130L200 330" opacity=".7"/>
+      <path d="M130 40H270L370 130L200 330L30 130Z"/>
+      <path class="gem-shine" pathLength="1000" d="M130 40H270L370 130L200 330L30 130Z"/>
+    </svg>
+    <svg class="gem gem-2" viewBox="0 0 400 360">
+      <path d="M30 130H370M130 40L100 130M130 40L165 130L200 40L235 130L270 40M270 40L300 130M100 130L200 330M165 130L200 330M235 130L200 330M300 130L200 330" opacity=".7"/>
+      <path d="M130 40H270L370 130L200 330L30 130Z"/>
+      <path class="gem-shine" pathLength="1000" d="M130 40H270L370 130L200 330L30 130Z"/>
+    </svg>
+    <i class="spark sp1"></i><i class="spark sp2"></i><i class="spark sp3"></i>
+    <i class="spark sp4"></i><i class="spark sp5"></i><i class="spark sp6"></i>
+  </div>
+
+  <!-- Back to home (top-left) -->
+  <a href="index.html" class="auth-back" aria-label="Back to home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6 6l-6-6 6-6"/></svg>
+    <span>Home</span>
+  </a>
+
+  <!-- RTL + Dark mode (top-right) -->
+  <div class="auth-toggles">
+    <button class="auth-icon-btn" id="rtlToggle" type="button" aria-pressed="false" aria-label="Switch to right-to-left" title="Switch LTR / RTL">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14m0 0l-4-4m4 4l-4 4M20 16H6m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
-    <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Switch to dark mode" aria-pressed="false">
-      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M1.5 12H4M20 12h2.5M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+    <button class="auth-icon-btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Light / Dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
   </div>
 
-  <main class="auth">
+  <main class="auth-stage" id="authStage">
+    <section class="auth-card" aria-labelledby="authTitle">
 
-    <!-- ================= Visual panel ================= -->
-    <section class="visual" aria-hidden="true">
-      <div class="v-bg">
-        <span class="orb o1"></span>
-        <span class="orb o2"></span>
-        <span class="grid-dots"></span>
-        <span class="ring r1"></span>
-        <span class="ring r2"></span>
+      <!-- Logo inside the card -->
+      <a href="index.html" class="auth-brand stagger" style="--i:0" aria-label="Emeravita Health Store home">
+        <span class="auth-logo"><img src="assets/images/emeravita-icon.png" alt="" width="120" height="120" decoding="async" /></span>
+        <span class="auth-brand-text">
+          <span class="auth-brand-name">Emeravita</span>
+          <span class="auth-brand-tag">Wellness, polished like a gem.</span>
+        </span>
+      </a>
+
+      <h1 class="auth-title stagger" style="--i:1" id="authTitle">Welcome <em>back</em></h1>
+      <p class="auth-sub stagger" style="--i:2">Sign in to track orders, refill prescriptions and manage your membership.</p>
+
+      <!-- Other sign-in options -->
+      <div class="social-row stagger" style="--i:3">
+        <button type="button" class="social-btn" data-provider="Google" aria-label="Sign in with Google">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          </svg>
+          <span>Google</span>
+        </button>
+        <button type="button" class="social-btn" data-provider="Apple" aria-label="Sign in with Apple">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span>Apple</span>
+        </button>
       </div>
 
-      <div class="v-inner">
-        <a href="index.html" class="v-brand" aria-label="Emeravita Health Store home">
-          <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" width="120" height="120" />
-          <div>
-            <strong>Emeravita</strong>
-            <span>Wellness, polished like a gem.</span>
-          </div>
-        </a>
+      <div class="auth-divider stagger" style="--i:4"><span>or sign in with email</span></div>
 
-        <div class="v-scene">
-          <div class="capsule3d"><span class="cap-a"></span><span class="cap-b"></span></div>
-          <div class="pill-dot pd1"></div>
-          <div class="pill-dot pd2"></div>
-          <div class="pill-dot pd3"></div>
+      <form class="auth-form" id="loginForm" novalidate>
 
-          <div class="glass-card gc-main">
-            <div class="gc-row">
-              <span class="gc-ico">℞</span>
-              <div><strong>Prescription #4821</strong><small>Verified by pharmacist</small></div>
-              <span class="gc-ok">✓</span>
-            </div>
-            <div class="gc-progress"><span></span></div>
-            <small class="gc-note">Out for delivery · arriving by 6 PM</small>
+        <div class="field-group stagger" style="--i:5">
+          <div class="field">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+            <input type="email" id="loginEmail" name="email" placeholder=" " autocomplete="email" inputmode="email" required data-rule="email" aria-describedby="loginEmailErr" />
+            <label for="loginEmail">Email address</label>
+            <span class="field-line" aria-hidden="true"></span>
+            <svg class="field-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 12.5l3.2 3.2L17 9"/></svg>
           </div>
-          <div class="glass-card gc-mini m1"><strong>Refill reminder</strong><small>Vitamin D3 · in 3 days</small></div>
-          <div class="glass-card gc-mini m2"><strong>Member savings</strong><small>₹1,240 saved this year</small></div>
+          <p class="field-error" id="loginEmailErr"></p>
         </div>
 
-        <div class="v-text">
-          <h2>Your health, <span>beautifully organised.</span></h2>
-          <ul class="v-rotator" id="rotator">
-            <li class="active">Track orders and deliveries in real time</li>
-            <li>Upload and manage prescriptions securely</li>
-            <li>Get automatic refill reminders</li>
-            <li>Unlock member-only prices and offers</li>
-          </ul>
-          <div class="v-dots" id="rotatorDots"><span class="on"></span><span></span><span></span><span></span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Form panel ================= -->
-    <section class="panel">
-      <div class="card" id="card">
-
-        <a href="index.html" class="mobile-brand" aria-label="Emeravita Health Store home">
-          <img src="assets/images/emeravita-icon.png" alt="Emeravita Health Store logo" width="120" height="120" />
-          <span><strong>Emeravita</strong><small>Wellness, polished like a gem.</small></span>
-        </a>
-
-        <!-- ===== View: Login ===== -->
-        <div class="view active" id="view-login" data-view="login">
-          <span class="badge"><span class="pulse-dot"></span> Member Area</span>
-          <h1>Welcome back</h1>
-          <p class="sub an a3">Sign in to manage your orders, prescriptions and refills.</p>
-
-          <div class="seg an a3" role="tablist" aria-label="Login method">
-            <button type="button" class="seg-btn active" data-method="email" role="tab" aria-selected="true">Email</button>
-            <button type="button" class="seg-btn" data-method="otp" role="tab" aria-selected="false">Mobile OTP</button>
-            <span class="seg-pill" aria-hidden="true"></span>
-          </div>
-
-          <!-- Email + password -->
-          <form class="form method active" id="loginEmail" data-method="email" novalidate>
-            <div class="field an a4">
-              <input type="email" id="lgEmail" name="email" placeholder=" " autocomplete="email" required />
-              <label for="lgEmail">Email address</label>
-              <svg class="f-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <small class="err" aria-live="polite"></small>
-            </div>
-            <div class="field an a5">
-              <input type="password" id="lgPass" name="password" placeholder=" " autocomplete="current-password" required minlength="6" />
-              <label for="lgPass">Password</label>
-              <svg class="f-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-              <button type="button" class="eye" aria-label="Show password" aria-pressed="false">
-                <svg class="eye-open" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-                <svg class="eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.2M6.6 6.6A17 17 0 0 0 2 12s3.5 7 10 7a9.6 9.6 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
-              </button>
-              <small class="err" aria-live="polite"></small>
-              <div class="caps" hidden>Caps Lock is on</div>
-            </div>
-            <div class="row-between an a6">
-              <label class="check"><input type="checkbox" id="remember" /><span class="box"></span>Remember me</label>
-              <button type="button" class="link" data-go="forgot">Forgot password?</button>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block an a6">
-              <span class="btn-label">Sign In</span>
-              <span class="spinner" aria-hidden="true"></span>
-              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-          </form>
-
-          <!-- Mobile OTP -->
-          <form class="form method" id="loginOtp" data-method="otp" novalidate>
-            <div class="field">
-              <input type="tel" id="lgPhone" name="phone" placeholder=" " inputmode="numeric" maxlength="10" autocomplete="tel-national" required />
-              <label for="lgPhone">Mobile number</label>
-              <span class="prefix">+91</span>
-              <small class="err" aria-live="polite"></small>
-            </div>
-            <div class="otp-wrap" id="otpWrap" hidden>
-              <p class="otp-note">Enter the 6-digit code sent to <b id="otpTo"></b></p>
-              <div class="otp-grid" id="otpBoxes">
-                <input inputmode="numeric" maxlength="1" aria-label="Digit 1" /><input inputmode="numeric" maxlength="1" aria-label="Digit 2" /><input inputmode="numeric" maxlength="1" aria-label="Digit 3" />
-                <input inputmode="numeric" maxlength="1" aria-label="Digit 4" /><input inputmode="numeric" maxlength="1" aria-label="Digit 5" /><input inputmode="numeric" maxlength="1" aria-label="Digit 6" />
-              </div>
-              <small class="err otp-err" aria-live="polite"></small>
-              <p class="resend">Didn't get it? <button type="button" class="link" id="resendBtn" disabled>Resend in <span id="resendT">30</span>s</button></p>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block" id="otpSubmit">
-              <span class="btn-label">Send OTP</span>
-              <span class="spinner" aria-hidden="true"></span>
-              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-          </form>
-
-          <div class="divider an a7"><span>or continue with</span></div>
-          <div class="socials-login an a7">
-            <button type="button" class="soc-btn" data-provider="Google">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.1a4.4 4.4 0 0 1-1.9 2.9v2.4h3.1c1.8-1.7 2.7-4.1 2.7-7z" fill="#4285F4" stroke="none"/><path d="M12 21.5c2.6 0 4.7-.9 6.3-2.3l-3.1-2.4c-.9.6-2 .9-3.2.9-2.5 0-4.6-1.7-5.3-3.9H3.5v2.5A9.5 9.5 0 0 0 12 21.5z" fill="#34A853" stroke="none"/><path d="M6.7 13.8a5.7 5.7 0 0 1 0-3.6V7.7H3.5a9.5 9.5 0 0 0 0 8.6z" fill="#FBBC05" stroke="none"/><path d="M12 6.3c1.4 0 2.6.5 3.6 1.4l2.7-2.7A9.5 9.5 0 0 0 3.5 7.7l3.2 2.5C7.4 8 9.5 6.3 12 6.3z" fill="#EA4335" stroke="none"/></svg>
-              Google
-            </button>
-            <button type="button" class="soc-btn" data-provider="Apple">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6a4.3 4.3 0 0 0-3.4-1.8c-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8a4.5 4.5 0 0 0-3.8 2.3c-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3s1.6-.7 3-.7 1.8.7 3 .7 2-1.1 2.8-2.3a10 10 0 0 0 1.2-2.6 4 4 0 0 1-2.4-3.7zM14.1 5.6A4 4 0 0 0 15 2.7a4.1 4.1 0 0 0-2.7 1.4 3.8 3.8 0 0 0-1 2.8 3.4 3.4 0 0 0 2.8-1.3z" fill="currentColor" stroke="none"/></svg>
-              Apple
+        <div class="field-group stagger" style="--i:6">
+          <div class="field has-toggle">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/><circle cx="12" cy="15.5" r="1.2"/></svg>
+            <input type="password" id="loginPassword" name="password" placeholder=" " autocomplete="current-password" required data-rule="loginPassword" aria-describedby="loginPasswordErr" />
+            <label for="loginPassword">Password</label>
+            <span class="field-line" aria-hidden="true"></span>
+            <button type="button" class="pw-toggle" aria-controls="loginPassword" aria-pressed="false" aria-label="Show password">
+              <svg class="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.1A10.6 10.6 0 0112 5c6.4 0 10 7 10 7a17.7 17.7 0 01-3.2 4.1M6.6 6.6C3.9 8.4 2 12 2 12s3.6 7 10 7a10 10 0 005.4-1.6"/><path d="M9.9 9.9a3 3 0 004.2 4.2"/></svg>
             </button>
           </div>
-
-          <p class="switch an a7">New to Emeravita? <button type="button" class="link strong" data-go="register">Create a member account</button></p>
+          <p class="field-error" id="loginPasswordErr"></p>
         </div>
 
-        <!-- ===== View: Register ===== -->
-        <div class="view" id="view-register" data-view="register">
-          <button type="button" class="back" data-go="login"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg> Back to sign in</button>
-          <h1>Become a member</h1>
-          <p class="sub">Free forever. Save on medicines and never miss a refill.</p>
-          <form class="form" id="registerForm" novalidate>
-            <div class="field">
-              <input type="text" id="rgName" placeholder=" " autocomplete="name" required minlength="2" />
-              <label for="rgName">Full name</label>
-              <svg class="f-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              <small class="err" aria-live="polite"></small>
-            </div>
-            <div class="field">
-              <input type="email" id="rgEmail" placeholder=" " autocomplete="email" required />
-              <label for="rgEmail">Email address</label>
-              <svg class="f-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <small class="err" aria-live="polite"></small>
-            </div>
-            <div class="field">
-              <input type="password" id="rgPass" placeholder=" " autocomplete="new-password" required minlength="8" />
-              <label for="rgPass">Create password</label>
-              <svg class="f-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-              <button type="button" class="eye" aria-label="Show password" aria-pressed="false">
-                <svg class="eye-open" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-                <svg class="eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.2M6.6 6.6A17 17 0 0 0 2 12s3.5 7 10 7a9.6 9.6 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
-              </button>
-              <small class="err" aria-live="polite"></small>
-            </div>
-            <div class="strength" aria-live="polite">
-              <div class="bars"><span></span><span></span><span></span><span></span></div>
-              <small id="strengthText">Use 8+ characters with a number and a symbol</small>
-            </div>
-            <label class="check terms"><input type="checkbox" id="rgTerms" /><span class="box"></span>I agree to the <a href="terms.html">Terms &amp; Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a></label>
-            <small class="err terms-err" aria-live="polite"></small>
-            <button type="submit" class="btn btn-primary btn-block">
-              <span class="btn-label">Create Account</span>
-              <span class="spinner" aria-hidden="true"></span>
-              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-          </form>
-          <p class="switch">Already a member? <button type="button" class="link strong" data-go="login">Sign in</button></p>
+        <!-- Remember me + Forgot password on one line -->
+        <div class="form-row stagger" style="--i:7">
+          <label class="check">
+            <input type="checkbox" id="rememberMe" name="remember" />
+            <span class="check-box" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></span>
+            Remember me
+          </label>
+          <button type="button" class="link-btn" id="forgotLink">Forgot password?</button>
         </div>
 
-        <!-- ===== View: Forgot password ===== -->
-        <div class="view" id="view-forgot" data-view="forgot">
-          <button type="button" class="back" data-go="login"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg> Back to sign in</button>
-          <div class="key-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 9.2-9.2M17 6l3 3M14 9l2 2"/></svg></div>
-          <h1>Reset your password</h1>
-          <p class="sub">Enter your registered email and we'll send you a secure reset link.</p>
-          <form class="form" id="forgotForm" novalidate>
-            <div class="field">
-              <input type="email" id="fgEmail" placeholder=" " autocomplete="email" required />
-              <label for="fgEmail">Email address</label>
-              <svg class="f-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <small class="err" aria-live="polite"></small>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">
-              <span class="btn-label">Send Reset Link</span>
-              <span class="spinner" aria-hidden="true"></span>
-              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-          </form>
-        </div>
+        <button type="submit" class="auth-cta stagger" style="--i:8">
+          <span class="cta-label">Sign In</span>
+          <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          <span class="cta-spinner" aria-hidden="true"></span>
+        </button>
 
-        <!-- ===== View: Success ===== -->
-        <div class="view" id="view-success" data-view="success">
-          <div class="success-ico" aria-hidden="true">
-            <svg viewBox="0 0 52 52"><circle class="sc-circle" cx="26" cy="26" r="24"/><path class="sc-check" d="m15 27 7 7 15-16"/></svg>
-            <span class="burst"></span>
-          </div>
-          <h1 id="successTitle">You're signed in!</h1>
-          <p class="sub" id="successText">Welcome back to Emeravita.</p>
-          <a href="index.html" class="btn btn-primary btn-block">Continue to Home</a>
-          <button type="button" class="btn btn-secondary btn-block" data-go="login">Back to sign in</button>
-        </div>
+        <p class="form-status" id="loginStatus" role="status" aria-live="polite"></p>
+      </form>
 
-        <p class="secure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg> Your data is encrypted and kept private</p>
-      </div>
+      <button type="button" class="demo-fill stagger" style="--i:9" id="demoFill" aria-label="Fill in the demo account: member@emeravita.com, password Emeravita@123">
+        <span class="demo-tag">Demo</span>
+        <span><b>member@emeravita.com</b> · <b>Emeravita@123</b></span>
+      </button>
+
+      <p class="auth-switch stagger" style="--i:10"><bdi>New to Emeravita?</bdi> <a href="signup.html" class="auth-link">Create an account</a></p>
     </section>
   </main>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="login.js"></script>
+  <script src="auth.js"></script>
 </body>
 </html>

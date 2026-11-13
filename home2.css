@@ -242,6 +242,9 @@
    2. CATEGORY RAIL
    ========================================================= */
 .hm-rail-nav { display: flex; gap: 10px; }
+.hm-rail-sec .hm-head-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; }
+.hm-rail-sec .hm-head-row > div:first-child { grid-column: 2; text-align: center; }
+.hm-rail-sec .hm-rail-nav { grid-column: 3; justify-self: end; }
 .hm-rail {
   display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
   padding: 10px max(4%, calc((100% - 1240px) / 2)) 30px; scrollbar-width: none;
@@ -259,12 +262,17 @@
 .hm-cat.hm-in:hover { transform: translateY(-10px) rotate(-1deg); box-shadow: var(--shadow-lg); }
 .hm-cat:hover img { transform: scale(1.12); }
 .hm-cat:hover::after { background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 10%, transparent) 20%, color-mix(in srgb, var(--panel-b) 90%, transparent)); }
-.hm-cat-body { position: absolute; z-index: 1; inset-inline: 22px; inset-block-end: 22px; display: grid; gap: 4px; }
-.hm-cat-body small { font-weight: 700; color: var(--secondary-text); letter-spacing: 2px; }
+.hm-cat-body { position: absolute; z-index: 1; inset-inline: 22px; inset-block-end: 22px; display: grid; gap: 4px; color: #000; }
+.hm-cat-body small { font-weight: 700; color: #000; letter-spacing: 2px; }
 .hm-cat-body strong { font-family: var(--font-head); font-size: 1.5rem; }
 .hm-cat-body em { font-style: normal; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: .9rem; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .45s var(--ease), opacity .45s; }
 .hm-cat:hover .hm-cat-body em, .hm-cat:focus-visible .hm-cat-body em { max-height: 2em; opacity: 1; }
 [dir="rtl"] .hm-cat-body em svg { transform: scaleX(-1); }
+
+@media (max-width: 700px) {
+  .hm-rail-sec .hm-head-row { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hm-rail-sec .hm-rail-nav { align-self: center; }
+}
 
 /* =========================================================
    3. HEALTH GOALS TABS

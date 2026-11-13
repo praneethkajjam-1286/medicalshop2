@@ -355,13 +355,13 @@ img.img-fallback { opacity: 0; }
 .icon-btn:hover { background: var(--chrome-accent); color: var(--chrome-accent-text); transform: rotate(180deg); }
 #themeToggle:hover { transform: rotate(-25deg) scale(1.08); }
 .site-header .header-cta {
-  background: var(--chrome-accent);
-  border-color: var(--chrome-accent);
+  background: var(--btn-primary-bg);
+  border-color: var(--btn-border);
   color: var(--chrome-accent-text);
 }
 .site-header .header-cta:hover, .site-header .header-cta:focus-visible {
-  background: var(--chrome-hover);
-  border-color: var(--chrome-hover);
+  background: var(--btn-hover-bg);
+  border-color: var(--btn-hover-bg);
   color: var(--on-hover);
 }
 [data-theme="dark"] .site-header .header-cta:hover,
@@ -738,7 +738,7 @@ img.img-fallback { opacity: 0; }
 @keyframes badgeSpin { 0%, 70%, 100% { transform: rotateY(0); } 85% { transform: rotateY(360deg); } }
 
 /* ---------- 18. Responsive ---------- */
-/* Laptop widths: tighten the nav so the brand, links and Member Login CTA always fit in one row */
+/* Laptop widths: tighten the nav so the brand, links and My Health Hub CTA always fit in one row */
 @media (min-width: 1241px) and (max-width: 1480px) {
   .header-inner { gap: 18px; }
   .nav-list { gap: 2px; }
@@ -868,7 +868,7 @@ img.img-fallback { opacity: 0; }
   .plan-featured,
   .cat-card,
   .flip-card
-),
+):not(.special-card),
 :is(
   [class*="card"],
   [class*="panel"],
@@ -886,7 +886,7 @@ img.img-fallback { opacity: 0; }
   .plan-featured,
   .cat-card,
   .flip-card
-) :not(button):not(button *):not(.btn):not(.btn *):not(svg):not(svg *) {
+):not(.special-card) :not(button):not(button *):not(.btn):not(.btn *):not(svg):not(svg *) {
   color: #000 !important;
   -webkit-text-fill-color: #000 !important;
 }
@@ -908,7 +908,7 @@ img.img-fallback { opacity: 0; }
   .plan-featured,
   .cat-card,
   .flip-card
-),
+):not(.special-card),
 [data-theme="dark"] :is(
   [class*="card"],
   [class*="panel"],
@@ -926,7 +926,7 @@ img.img-fallback { opacity: 0; }
   .plan-featured,
   .cat-card,
   .flip-card
-) :not(button):not(button *):not(.btn):not(.btn *):not(svg):not(svg *) {
+):not(.special-card) :not(button):not(button *):not(.btn):not(.btn *):not(svg):not(svg *) {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
 }

@@ -23,6 +23,7 @@
   </script>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="home2.css" />
+  <link rel="stylesheet" href="special-cards.css" />
 </head>
 <body class="home2-body">
 
@@ -71,7 +72,7 @@
           <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
         <!-- The ONLY header CTA -->
-        <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+        <a href="login.html" class="btn btn-primary header-cta">My Health Hub</a>
         <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -339,8 +340,8 @@
         </div>
 
         <div class="hm-picks-grid">
-          <article class="hm-pick hm-reveal">
-            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/9774611/pexels-photo-9774611.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Hands applying moisturiser from a jar" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off">-15%</span></div>
+          <article class="hm-pick special-card hm-reveal">
+            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/9774611/pexels-photo-9774611.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Hands applying moisturiser from a jar" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off special-badge">-15%</span></div>
             <div class="hm-pick-body">
               <small>Personal Care</small>
               <h3>Daily Hydrating Cream</h3>
@@ -348,8 +349,8 @@
               <button type="button" class="hm-add" data-name="Daily Hydrating Cream"><svg width="18" height="18"><use href="#hm-cart"/></svg><span>Add to cart</span></button>
             </div>
           </article>
-          <article class="hm-pick hm-reveal">
-            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/6303712/pexels-photo-6303712.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Glucometer checking blood sugar" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off">-20%</span></div>
+          <article class="hm-pick special-card hm-reveal">
+            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/6303712/pexels-photo-6303712.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Glucometer checking blood sugar" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off special-badge">-20%</span></div>
             <div class="hm-pick-body">
               <small>Devices</small>
               <h3>Glucometer Starter Kit</h3>
@@ -357,8 +358,8 @@
               <button type="button" class="hm-add" data-name="Glucometer Starter Kit"><svg width="18" height="18"><use href="#hm-cart"/></svg><span>Add to cart</span></button>
             </div>
           </article>
-          <article class="hm-pick hm-reveal">
-            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/5858740/pexels-photo-5858740.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Digital thermometer" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off">-10%</span></div>
+          <article class="hm-pick special-card hm-reveal">
+            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/5858740/pexels-photo-5858740.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Digital thermometer" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off special-badge">-10%</span></div>
             <div class="hm-pick-body">
               <small>Devices</small>
               <h3>Digital Thermometer</h3>
@@ -366,8 +367,8 @@
               <button type="button" class="hm-add" data-name="Digital Thermometer"><svg width="18" height="18"><use href="#hm-cart"/></svg><span>Add to cart</span></button>
             </div>
           </article>
-          <article class="hm-pick hm-reveal">
-            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/6753268/pexels-photo-6753268.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Blood pressure being checked with a sphygmomanometer" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off">-18%</span></div>
+          <article class="hm-pick special-card hm-reveal">
+            <div class="hm-pick-img"><img src="https://images.pexels.com/photos/6753268/pexels-photo-6753268.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Blood pressure being checked with a sphygmomanometer" loading="lazy" onerror="this.classList.add('img-fallback')" /><span class="hm-off special-badge">-18%</span></div>
             <div class="hm-pick-body">
               <small>Devices</small>
               <h3>Automatic BP Monitor</h3>
@@ -426,7 +427,7 @@
     <!-- ================= 8. CTA (above footer) ================= -->
     <section class="hm-cta" id="hm-cta">
       <div class="container">
-        <div class="hm-cta-wrap hm-reveal">
+        <div class="hm-cta-wrap special-card hm-reveal">
           <div class="hm-cta-copy">
             <span class="eyebrow">Join Emeravita</span>
             <h2>Save up to 20% on every order</h2>
@@ -478,7 +479,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="membership.html">Membership Plans</a></li>
           <li><a href="delivery.html">Home Delivery Info</a></li>
-          <li><a href="login.html">Member Login</a></li>
+          <li><a href="login.html">My Health Hub</a></li>
         </ul>
       </div>
 

@@ -1,0 +1,563 @@
+/* =========================================================
+   EMERAVITA – Authentication Pages Stylesheet
+   Shared by: login.html, signup.html
+   No navbar / footer · centred card · no page scrolling
+   ========================================================= */
+
+/* ---------- 1. Design tokens (same palette as the home page) ---------- */
+:root,
+[data-theme="light"] {
+  --primary: #C6A56B;           /* Champagne Gold */
+  --primary-text: #7A5C24;      /* Antique Gold – gold text on light bg */
+  --on-primary: #123B32;        /* Deep Forest Green */
+  --secondary: #174F46;         /* Royal Emerald */
+  --on-secondary: #FFFFFF;
+  --accent: #236B56;            /* Botanical Green */
+  --button-hover: #174F46;
+  --on-hover: #FFFFFF;
+
+  --bg-main: #FAF8F2;           /* Premium Ivory */
+  --bg-secondary: #F3EDE0;      /* Soft Champagne */
+  --card-bg: #FFFFFF;
+  --card-glass: rgba(255, 255, 255, 0.86);
+  --heading: #123B32;
+  --text: #354B45;
+  --text-muted: #5B6F68;
+  --border: #E8E1D2;
+  --input-bg: #FFFFFF;
+  --input-border: #9C8F72;      /* 3:1 against white for visible field edges */
+  --focus: #174F46;
+  --error: #B42318;
+  --success: #17603F;
+  --warning: #A35A12;
+
+  --glow-1: rgba(23, 79, 70, 0.30);
+  --glow-2: rgba(198, 165, 107, 0.42);
+  --glow-3: rgba(35, 107, 86, 0.20);
+  --facet: rgba(122, 92, 36, 0.20);
+  --sheen: rgba(255, 255, 255, 0.32);
+  --shadow-lg: 0 30px 70px rgba(18, 59, 50, 0.18), 0 6px 18px rgba(18, 59, 50, 0.08);
+}
+
+[data-theme="dark"] {
+  --primary: #D9B778;
+  --primary-text: #E6C88E;
+  --on-primary: #061F19;
+  --secondary: #8EE2B5;         /* Soft Mint */
+  --on-secondary: #061F19;
+  --accent: #4FB58A;            /* Jade Glow */
+  --button-hover: #8EE2B5;
+  --on-hover: #061F19;
+
+  --bg-main: #061F19;           /* Midnight Forest */
+  --bg-secondary: #0B3027;
+  --card-bg: #103B30;
+  --card-glass: rgba(16, 59, 48, 0.82);
+  --heading: #F6F1E6;
+  --text: #D3E8DF;
+  --text-muted: #A9C4B9;
+  --border: #2E5A4C;
+  --input-bg: #0B3027;
+  --input-border: #5E8A7B;
+  --focus: #D9B778;
+  --error: #F4A39B;
+  --success: #8EE2B5;
+  --warning: #F0A85C;
+
+  --glow-1: rgba(79, 181, 138, 0.26);
+  --glow-2: rgba(217, 183, 120, 0.22);
+  --glow-3: rgba(142, 226, 181, 0.14);
+  --facet: rgba(217, 183, 120, 0.20);
+  --sheen: rgba(255, 255, 255, 0.12);
+  --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.55), 0 6px 18px rgba(0, 0, 0, 0.30);
+}
+
+:root {
+  --font-head: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --ctl-h: clamp(44px, 6.2vh, 52px);     /* inputs, social buttons and CTA share one height */
+  --gap: clamp(8px, 1.4vh, 13px);
+  --radius-ctl: 14px;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ---------- 2. Base (no page scrolling) ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; overscroll-behavior: none; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-main);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .4s var(--ease), color .4s var(--ease);
+}
+img, svg { display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* ---------- 3. Animated background ---------- */
+.auth-bg {
+  position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 0% 0%, var(--bg-secondary) 0%, transparent 60%),
+    radial-gradient(100% 70% at 100% 100%, var(--bg-secondary) 0%, transparent 55%),
+    var(--bg-main);
+  transition: background .4s var(--ease);
+}
+.blob { position: absolute; border-radius: 50%; filter: blur(40px); will-change: transform; }
+.b1 { width: 55vmax; height: 55vmax; top: -22vmax; left: -18vmax;
+      background: radial-gradient(circle, var(--glow-1), transparent 65%);
+      animation: drift1 22s ease-in-out infinite alternate; }
+.b2 { width: 50vmax; height: 50vmax; bottom: -22vmax; right: -16vmax;
+      background: radial-gradient(circle, var(--glow-2), transparent 65%);
+      animation: drift2 26s ease-in-out infinite alternate; }
+.b3 { width: 28vmax; height: 28vmax; top: 30%; right: 12%;
+      background: radial-gradient(circle, var(--glow-3), transparent 65%);
+      animation: drift1 18s ease-in-out infinite alternate-reverse; }
+
+/* Gem outlines – a light "polish" runs around the edges */
+.gem { position: absolute; color: var(--facet); fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linejoin: round; }
+.gem-1 { width: min(52vmin, 520px); top: -6vmin; right: -8vmin; animation: gemFloat 16s ease-in-out infinite; }
+.gem-2 { width: min(30vmin, 300px); bottom: -3vmin; left: -4vmin; animation: gemFloat 20s ease-in-out infinite reverse; }
+.gem-shine {
+  stroke: var(--primary); stroke-width: 2.2; stroke-linecap: round;
+  stroke-dasharray: 90 910; stroke-dashoffset: 1000;
+  animation: trace 7s linear infinite;
+}
+.gem-2 .gem-shine { animation-duration: 9s; }
+
+/* Twinkling gem sparkles */
+.spark {
+  position: absolute; width: 14px; height: 14px; background: var(--primary);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  opacity: 0; animation: twinkle 4.5s ease-in-out infinite;
+}
+.sp1 { top: 14%; left: 18%; }
+.sp2 { top: 22%; right: 24%; width: 10px; height: 10px; animation-delay: 1.2s; }
+.sp3 { bottom: 18%; left: 26%; width: 18px; height: 18px; animation-delay: 2.1s; }
+.sp4 { bottom: 26%; right: 14%; animation-delay: .6s; }
+.sp5 { top: 56%; left: 8%; width: 9px; height: 9px; animation-delay: 3s; }
+.sp6 { top: 8%; left: 52%; width: 11px; height: 11px; animation-delay: 3.7s; }
+
+/* ---------- 4. Corner controls ---------- */
+/* RTL + Dark mode always stay in the top-right corner */
+.auth-toggles {
+  position: fixed; top: 16px; right: 16px; z-index: 5;
+  display: flex; gap: 10px; direction: ltr;
+}
+.auth-icon-btn,
+.auth-back {
+  height: 42px; color: var(--heading);
+  background: var(--card-glass);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border: 1.5px solid color-mix(in srgb, var(--primary-text) 55%, transparent);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--bg-main) 30%, transparent);
+  transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease), transform .45s var(--ease);
+}
+.auth-icon-btn { width: 42px; border-radius: 50%; display: grid; place-items: center; }
+.auth-icon-btn svg { width: 20px; height: 20px; }
+.auth-icon-btn:hover { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+#rtlToggle:hover { transform: rotate(180deg); }
+#themeToggle:hover { transform: rotate(-25deg) scale(1.08); }
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* Small "back to home" link (not a navbar) */
+.auth-back {
+  position: fixed; top: 16px; left: 16px; z-index: 5; direction: ltr;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding-inline: 14px 18px; border-radius: 999px;
+  font-size: .86rem; font-weight: 700;
+}
+.auth-back svg { width: 18px; height: 18px; transition: transform .35s var(--ease); }
+.auth-back:hover { border-color: var(--primary); }
+.auth-back:hover svg { transform: translateX(-4px); }
+
+/* ---------- 5. Stage + card (always centred, scaled to fit) ---------- */
+.auth-stage {
+  --reserve: 48px;   /* vertical space kept free around the card */
+  --shift: 0px;
+  position: fixed; z-index: 1;
+  top: calc(50% + var(--shift)); left: 50%;
+  width: min(440px, calc(100vw - 32px));
+  transform: translate(-50%, -50%) scale(var(--fit, 1));
+  transform-origin: center;
+  perspective: 1400px;
+}
+
+.auth-card {
+  position: relative; isolation: isolate;
+  padding: clamp(20px, 3.4vh, 32px) clamp(20px, 4.6vw, 34px) clamp(18px, 3vh, 28px);
+  border-radius: 28px;
+  background: var(--card-glass);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: var(--shadow-lg), inset 0 0 0 1px color-mix(in srgb, var(--primary) 22%, transparent);
+  animation: cardIn 1s var(--ease) backwards;
+  transition: background .4s var(--ease);
+}
+/* Rotating gem-cut border */
+.auth-card::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px;
+  background: conic-gradient(from var(--angle),
+    var(--primary), transparent 22%,
+    color-mix(in srgb, var(--accent) 80%, transparent) 50%,
+    transparent 72%, var(--primary));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: spinBorder 8s linear infinite;
+  pointer-events: none;
+}
+/* "Polish" light sweep across the card */
+.auth-card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(115deg, transparent 38%, var(--sheen) 50%, transparent 62%);
+  background-size: 260% 100%;
+  background-position: 160% 0;
+  animation: polish 10s 1.4s ease-in-out infinite;
+}
+
+/* Brand inside the card */
+.auth-brand {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-block-end: clamp(10px, 1.8vh, 16px);
+  width: fit-content; margin-inline: auto;
+}
+.auth-logo {
+  position: relative; flex-shrink: 0;
+  width: clamp(48px, 7vh, 60px); aspect-ratio: 1;
+  border-radius: 18px; display: grid; place-items: center;
+  background: linear-gradient(145deg, var(--bg-secondary), var(--card-bg));
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 30%, transparent);
+  animation: logoFloat 6s ease-in-out infinite;
+}
+.auth-logo img { width: 84%; height: 84%; object-fit: contain; }
+.auth-logo::after {
+  content: ""; position: absolute; inset: -5px; border-radius: 22px;
+  border: 1.5px solid color-mix(in srgb, var(--primary) 60%, transparent);
+  animation: ringPulse 3.2s ease-out infinite;
+}
+.auth-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.auth-brand-name { font-family: var(--font-head); font-size: 1.45rem; font-weight: 700; color: var(--heading); letter-spacing: .4px; }
+.auth-brand-tag { font-size: .72rem; color: var(--text-muted); margin-block-start: 3px; }
+
+.auth-title {
+  font-family: var(--font-head); font-weight: 600; color: var(--heading);
+  font-size: clamp(1.35rem, 3.3vh, 1.8rem); line-height: 1.2; text-align: center;
+}
+.auth-title em { font-style: italic; color: var(--primary-text); }
+.auth-sub {
+  text-align: center; color: var(--text-muted); font-size: .9rem;
+  margin-block: 4px clamp(12px, 2.2vh, 20px);
+}
+
+/* ---------- 6. Social sign-in ---------- */
+.social-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.social-btn {
+  height: var(--ctl-h);
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  border-radius: var(--radius-ctl);
+  border: 1.5px solid var(--input-border);
+  background: var(--input-bg); color: var(--heading);
+  font-weight: 700; font-size: .92rem;
+  transition: transform .35s var(--ease), border-color .3s var(--ease), box-shadow .35s var(--ease), background .3s;
+}
+.social-btn svg { width: 20px; height: 20px; flex-shrink: 0; transition: transform .5s var(--ease); }
+.social-btn:hover {
+  transform: translateY(-2px); border-color: var(--primary);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--primary) 24%, transparent);
+}
+.social-btn:hover svg { transform: rotate(-8deg) scale(1.12); }
+.social-btn.is-loading svg { animation: pulse .9s ease-in-out infinite; }
+
+.auth-divider {
+  display: flex; align-items: center; gap: 12px;
+  margin-block: clamp(10px, 1.8vh, 16px);
+  color: var(--text-muted); font-size: .72rem; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase; white-space: nowrap;
+}
+.auth-divider::before, .auth-divider::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+}
+.auth-divider span::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; margin-inline-end: 8px;
+  background: var(--primary); transform: rotate(45deg); vertical-align: 1px;
+}
+
+/* ---------- 7. Form + floating-label fields ---------- */
+.auth-form { display: grid; gap: var(--gap); }
+
+.field { position: relative; }
+.field input {
+  appearance: none; width: 100%; height: var(--ctl-h);
+  padding-block: 17px 3px; padding-inline: 46px 46px;
+  border: 1.5px solid var(--input-border); border-radius: var(--radius-ctl);
+  background: var(--input-bg); color: var(--heading);
+  font-size: .95rem; font-weight: 500; outline: none;
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease), background .3s;
+}
+.field.has-toggle input { padding-inline-end: 52px; }
+.field input:hover { border-color: color-mix(in srgb, var(--primary) 70%, var(--input-border)); }
+.field input:focus {
+  border-color: var(--primary-text);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 26%, transparent);
+}
+.field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px var(--input-bg) inset;
+  -webkit-text-fill-color: var(--heading);
+  caret-color: var(--heading);
+}
+.field label {
+  position: absolute; inset-inline-start: 46px; top: 50%; transform: translateY(-50%);
+  color: var(--text-muted); font-size: .93rem; pointer-events: none; white-space: nowrap;
+  transition: top .25s var(--ease), transform .25s var(--ease), font-size .25s var(--ease), color .25s, letter-spacing .25s;
+}
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label,
+.field input:-webkit-autofill + label {
+  top: 6px; transform: none;
+  font-size: .66rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+  color: var(--primary-text);
+}
+.field-icon {
+  position: absolute; inset-inline-start: 15px; top: 50%; translate: 0 -50%;
+  width: 20px; height: 20px; color: var(--text-muted); pointer-events: none;
+  transition: color .3s, transform .45s var(--ease);
+}
+.field:focus-within .field-icon { color: var(--primary-text); transform: scale(1.12) rotate(-6deg); }
+.field-line {
+  position: absolute; inset-inline: 16px; bottom: 0; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+  transform: scaleX(0); transition: transform .45s var(--ease); pointer-events: none;
+}
+.field:focus-within .field-line { transform: scaleX(1); }
+
+/* Valid tick */
+.field-ok {
+  position: absolute; inset-inline-end: 14px; top: 50%; translate: 0 -50%;
+  width: 20px; height: 20px; color: var(--success); pointer-events: none;
+  opacity: 0; transform: scale(.4);
+  transition: opacity .3s var(--ease), transform .4s var(--ease);
+}
+.field-ok path { stroke-dasharray: 24; stroke-dashoffset: 24; transition: stroke-dashoffset .5s .1s var(--ease); }
+.field.is-valid .field-ok { opacity: 1; transform: scale(1); }
+.field.is-valid .field-ok path { stroke-dashoffset: 0; }
+.field.is-valid input { border-color: color-mix(in srgb, var(--success) 70%, var(--input-border)); }
+
+/* Error state */
+.field.is-invalid input { border-color: var(--error); box-shadow: 0 0 0 4px color-mix(in srgb, var(--error) 15%, transparent); }
+.field.is-invalid .field-icon,
+.field.is-invalid input:focus + label,
+.field.is-invalid input:not(:placeholder-shown) + label { color: var(--error); }
+.field.shake { animation: shake .42s var(--ease); }
+
+.field-error {
+  display: flex; align-items: center; gap: 6px;
+  margin-block-start: 6px; padding-inline-start: 4px;
+  font-size: .76rem; font-weight: 600; line-height: 1.3; color: var(--error);
+  animation: msgIn .3s var(--ease);
+}
+.field-error::before {
+  content: "!"; flex-shrink: 0; width: 15px; height: 15px; border-radius: 50%;
+  display: grid; place-items: center; font-size: .66rem; font-weight: 800;
+  background: var(--error); color: var(--card-bg);
+}
+.field-error:empty { display: none; }
+
+/* Password eye toggle */
+.pw-toggle {
+  position: absolute; inset-inline-end: 7px; top: 50%; translate: 0 -50%;
+  width: 38px; height: 38px; border-radius: 10px;
+  display: grid; place-items: center; color: var(--text-muted);
+  transition: color .25s, background .25s;
+}
+.pw-toggle:hover { color: var(--primary-text); background: color-mix(in srgb, var(--primary) 15%, transparent); }
+.pw-toggle svg { grid-area: 1 / 1; width: 20px; height: 20px; transition: opacity .25s var(--ease), transform .35s var(--ease); }
+.pw-toggle .eye-off { opacity: 0; transform: scale(.6) rotate(-30deg); }
+.pw-toggle.is-on .eye { opacity: 0; transform: scale(.6) rotate(30deg); }
+.pw-toggle.is-on .eye-off { opacity: 1; transform: none; }
+
+/* Password strength (sign-up) */
+.pw-strength { display: flex; align-items: center; gap: 10px; margin-block-start: 7px; padding-inline: 4px; }
+.pw-bars { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+.pw-bars i { height: 4px; border-radius: 4px; background: var(--border); transition: background .35s var(--ease); }
+.pw-label { font-size: .72rem; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
+[data-strength="1"] .pw-bars i:nth-child(-n+1) { background: var(--error); }
+[data-strength="2"] .pw-bars i:nth-child(-n+2) { background: var(--warning); }
+[data-strength="3"] .pw-bars i:nth-child(-n+3) { background: var(--primary); }
+[data-strength="4"] .pw-bars i { background: var(--success); }
+[data-strength="1"] .pw-label { color: var(--error); }
+[data-strength="2"] .pw-label { color: var(--warning); }
+[data-strength="3"] .pw-label { color: var(--primary-text); }
+[data-strength="4"] .pw-label { color: var(--success); }
+
+/* ---------- 8. Remember me + Forgot password (same line) ---------- */
+.form-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: .86rem; }
+
+.check { position: relative; display: inline-flex; align-items: center; gap: 9px; cursor: pointer; color: var(--text); font-weight: 500; user-select: none; }
+.check input { position: absolute; inset-inline-start: 0; top: 0; width: 19px; height: 19px; margin: 0; opacity: 0; cursor: pointer; }
+.check-box {
+  width: 19px; height: 19px; flex-shrink: 0; border-radius: 6px;
+  border: 1.5px solid var(--input-border); background: var(--input-bg);
+  display: grid; place-items: center;
+  transition: background .25s, border-color .25s, transform .25s var(--ease);
+}
+.check-box svg { width: 13px; height: 13px; color: var(--on-primary); }
+.check-box path { stroke-dasharray: 20; stroke-dashoffset: 20; transition: stroke-dashoffset .35s var(--ease); }
+.check:hover .check-box { border-color: var(--primary); }
+.check input:checked + .check-box { background: var(--primary); border-color: var(--primary); transform: scale(1.06); }
+.check input:checked + .check-box path { stroke-dashoffset: 0; }
+.check input:focus-visible + .check-box { outline: 3px solid var(--focus); outline-offset: 2px; }
+.check.is-invalid .check-box { border-color: var(--error); }
+.check--terms { align-items: flex-start; font-size: .82rem; line-height: 1.45; }
+.check--terms .check-box { margin-block-start: 1px; }
+.check--terms a { color: var(--primary-text); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+
+.link-btn, .auth-link {
+  color: var(--primary-text); font-weight: 700; unicode-bidi: plaintext;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat; background-size: 0% 1.5px; background-position: 0 100%;
+  transition: background-size .35s var(--ease);
+}
+[dir="rtl"] .link-btn, [dir="rtl"] .auth-link { background-position: 100% 100%; }
+.link-btn:hover, .auth-link:hover, .link-btn:focus-visible, .auth-link:focus-visible { background-size: 100% 1.5px; }
+
+/* ---------- 9. CTA (same width as the inputs) ---------- */
+.auth-cta {
+  position: relative; overflow: hidden; isolation: isolate;
+  width: 100%; height: var(--ctl-h);
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  border-radius: var(--radius-ctl); border: 2px solid var(--primary);
+  background: var(--primary); color: var(--on-primary);
+  font-weight: 800; font-size: 1rem; letter-spacing: .3px;
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--primary) 34%, transparent);
+  transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.auth-cta::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .45) 50%, transparent 70%);
+  transform: translateX(-120%); transition: transform .8s var(--ease);
+}
+.auth-cta:hover, .auth-cta:focus-visible {
+  background: var(--button-hover); border-color: var(--button-hover); color: var(--on-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px color-mix(in srgb, var(--button-hover) 32%, transparent);
+}
+.auth-cta:hover::before { transform: translateX(120%); }
+.auth-cta:active { transform: translateY(0) scale(.99); }
+.cta-label, .cta-arrow { transition: opacity .25s, transform .35s var(--ease); }
+.cta-arrow { width: 18px; height: 18px; }
+.auth-cta:hover .cta-arrow { transform: translateX(5px); }
+[dir="rtl"] .cta-arrow { transform: scaleX(-1); }
+[dir="rtl"] .auth-cta:hover .cta-arrow { transform: scaleX(-1) translateX(5px); }
+.cta-spinner {
+  position: absolute; width: 22px; height: 22px; border-radius: 50%;
+  border: 2.5px solid currentColor; border-inline-end-color: transparent; opacity: 0;
+}
+.auth-cta.is-loading { pointer-events: none; }
+.auth-cta.is-loading .cta-label, .auth-cta.is-loading .cta-arrow { opacity: 0; }
+.auth-cta.is-loading .cta-spinner { opacity: 1; animation: spin .8s linear infinite; }
+.auth-cta.is-success { background: var(--secondary); border-color: var(--secondary); color: var(--on-secondary); }
+.auth-cta:disabled { cursor: default; }
+
+/* ---------- 10. Status, demo, switch link ---------- */
+.form-status {
+  font-size: .84rem; font-weight: 600; text-align: center; line-height: 1.4;
+  padding: 9px 12px; border-radius: 12px; animation: msgIn .3s var(--ease);
+}
+.form-status:empty { display: none; }
+.form-status.ok   { color: var(--success); background: color-mix(in srgb, var(--success) 12%, transparent); }
+.form-status.err  { color: var(--error); background: color-mix(in srgb, var(--error) 10%, transparent); }
+.form-status.info { color: var(--primary-text); background: color-mix(in srgb, var(--primary) 15%, transparent); }
+
+.demo-fill {
+  width: 100%; margin-block-start: var(--gap);
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 8px;
+  padding: 8px 12px; border-radius: 12px;
+  border: 1.5px dashed color-mix(in srgb, var(--primary-text) 55%, transparent);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  color: var(--text); font-size: .78rem;
+  transition: background .3s, border-color .3s;
+}
+.demo-fill:hover { background: color-mix(in srgb, var(--primary) 15%, transparent); border-style: solid; }
+.demo-fill.is-filled { animation: pop .5s var(--ease); }
+.demo-tag {
+  padding: 2px 8px; border-radius: 999px;
+  background: var(--secondary); color: var(--on-secondary);
+  font-size: .64rem; font-weight: 800; letter-spacing: .8px; text-transform: uppercase;
+}
+.demo-fill b { color: var(--heading); font-weight: 700; }
+
+.auth-switch {
+  text-align: center; font-size: .88rem; color: var(--text-muted);
+  margin-block-start: clamp(10px, 1.8vh, 16px);
+}
+
+/* ---------- 11. Staggered entrance ---------- */
+.stagger { animation: itemIn .7s var(--ease) backwards; animation-delay: calc(.35s + var(--i, 0) * .07s); }
+
+/* ---------- 12. Keyframes ---------- */
+@keyframes cardIn { from { opacity: 0; transform: translateY(46px) rotateX(16deg) scale(.95); filter: blur(6px); } }
+@keyframes itemIn { from { opacity: 0; transform: translateY(16px); } }
+@keyframes spinBorder { to { --angle: 360deg; } }
+@keyframes polish { 0% { background-position: 160% 0; } 16%, 100% { background-position: -60% 0; } }
+@keyframes logoFloat { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-4px) rotate(-3deg); } }
+@keyframes ringPulse { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.32); } }
+@keyframes drift1 { to { transform: translate(8vmax, 6vmax) scale(1.08); } }
+@keyframes drift2 { to { transform: translate(-7vmax, -5vmax) scale(1.1); } }
+@keyframes gemFloat { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-14px) rotate(4deg); } }
+@keyframes trace { to { stroke-dashoffset: 0; } }
+@keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(.3) rotate(0); } 50% { opacity: .9; transform: scale(1) rotate(90deg); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-7px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(2px); } }
+@keyframes msgIn { from { opacity: 0; transform: translateY(-4px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(.8); opacity: .6; } }
+@keyframes pop { 40% { transform: scale(1.03); } }
+
+/* ---------- 13. Short screens: tighten before scaling ---------- */
+@media (max-height: 760px) {
+  :root { --ctl-h: 44px; --gap: 9px; }
+  .auth-logo { width: 46px; border-radius: 14px; }
+  .auth-brand-name { font-size: 1.3rem; }
+}
+@media (max-height: 660px) {
+  :root { --ctl-h: 42px; --gap: 8px; }
+  .auth-brand-tag, .auth-sub { display: none; }
+  .auth-title { margin-block-end: 12px; font-size: 1.3rem; }
+  .auth-brand { margin-block-end: 8px; }
+}
+
+/* ---------- 14. Small widths ---------- */
+@media (max-width: 640px) {
+  .auth-stage { --reserve: 86px; --shift: 27px; }   /* keep clear of the corner buttons */
+}
+@media (max-width: 420px) {
+  .auth-back span { display: none; }
+  .auth-back { width: 42px; padding: 0; justify-content: center; }
+  .auth-card { border-radius: 24px; }
+  .social-btn { font-size: .86rem; gap: 8px; }
+  .form-row { font-size: .82rem; }
+}
+
+/* ---------- 15. Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+  }
+  .auth-cta.is-loading .cta-spinner { animation: spin 1.2s linear infinite !important; }
+}

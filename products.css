@@ -416,10 +416,6 @@
 .ph-bundle li svg { flex-shrink: 0; color: var(--primary-text); }
 [data-theme="dark"] .ph-bundle li svg { color: var(--secondary-text); }
 .ph-bundle-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.ph-bundle-hot { background: linear-gradient(165deg, var(--ph-deep-b), var(--ph-deep-a)); border: 2px solid var(--secondary); color: var(--panel-text); }
-.ph-bundle-hot h3 { color: var(--panel-text); }
-.ph-bundle-hot li, .ph-bundle-hot .ph-price, .ph-bundle-hot .ph-price s { color: color-mix(in srgb, var(--footer-text) 90%, transparent); }
-.ph-bundle-hot li svg { color: var(--secondary-text); }
 .ph-bundle-tag {
   position: absolute; z-index: 3; inset-block-start: 24px; inset-inline-end: 24px;
   padding: 6px 14px; border-radius: 999px; font-size: .78rem; font-weight: 800;

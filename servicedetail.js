@@ -583,8 +583,8 @@ document.addEventListener("DOMContentLoaded", () => {
     $("sdPriceTitle").textContent = s.pricing.title;
     $("sdPriceNote").textContent = s.pricing.note;
     $("sdPricing").replaceChildren(...s.pricing.plans.map((plan) => {
-      const card = el("article", `sd-price-card sd-reveal${plan.featured ? " is-featured" : ""}`);
-      if (plan.featured && plan.tag) card.appendChild(el("span", "sd-price-tag", plan.tag));
+      const card = el("article", `sd-price-card sd-reveal${plan.featured ? " is-featured special-card" : ""}`);
+      if (plan.featured && plan.tag) card.appendChild(el("span", "sd-price-tag special-badge", plan.tag));
       const amount = el("p", "sd-price-amount");
       const isText = /[a-z]/i.test(plan.price) && plan.price !== "Free";
       amount.append(el("strong", isText ? "is-text" : "", plan.price));
