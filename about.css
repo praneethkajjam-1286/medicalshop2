@@ -112,14 +112,6 @@
 .ab-tint { background: var(--alt-bg); transition: background .4s var(--ease); }
 .ab-head { text-align: center; max-width: 700px; margin: 0 auto 64px; }
 .ab-head p { color: var(--muted); font-size: 1.05rem; }
-.ab-kicker {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: .8rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--primary-deep); margin-block-end: 14px;
-}
-.ab-kicker::before { content: ""; width: 28px; height: 2px; background: currentColor; border-radius: 2px; }
-.ab-head .ab-kicker::after { content: ""; width: 28px; height: 2px; background: currentColor; border-radius: 2px; }
-.ab-kicker-light { color: var(--footer-accent); }
 .ab-h2 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); margin-block-end: 18px; }
 
 /* =========================================================
@@ -159,6 +151,12 @@
 .ab-blob-2 { width: 260px; height: 260px; background: var(--secondary); inset-block-end: 40px; inset-inline-start: -60px; animation: abMorph 18s ease-in-out infinite reverse; }
 
 .ab-hero-copy { max-width: 600px; }
+.ab-hero-eyebrow {
+  color: var(--panel-text);
+  -webkit-text-fill-color: var(--panel-text);
+  opacity: 0;
+  animation: abFadeUp .8s var(--ease) .1s forwards;
+}
 .ab-crumb {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 7px 16px; border-radius: 999px; margin-block-end: 22px;
@@ -404,7 +402,7 @@
    6. QUALITY (progress rings)
    ========================================================= */
 .ab-quality { background: #fff; color: #000; }
-#ab-quality :is(h1, h2, h3, h4, p, li, span, small, strong, em, dt, dd, a, label, svg) { color: #000; }
+#ab-quality :is(h1, h2, h3, h4, p, li, span:not(.eyebrow), small, strong, em, dt, dd, a, label, svg) { color: #000; }
 .ab-quality::before {
   content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%;
   inset-block-start: -220px; inset-inline-end: -160px;
@@ -581,12 +579,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ab-line > span, .ab-crumb, .ab-hero-text, .ab-hero-actions, .ab-hero-facts,
+  .ab-line > span, .ab-crumb, .ab-hero-eyebrow, .ab-hero-text, .ab-hero-actions, .ab-hero-facts,
   .ab-shot, .ab-seal, .ab-chip { animation: none !important; opacity: 1 !important; transform: none !important; clip-path: none !important; }
   .ab-reveal { opacity: 1; transform: none; }
 }
 
-[data-theme="light"] .ab-hero :is(h1, h2, h3, h4, p, li, span, small, strong, em, dt, dd, a, label):not(.btn *):not(svg *) {
+[data-theme="light"] .ab-hero :is(h1, h2, h3, h4, p, li, span:not(.eyebrow-banner), small, strong, em, dt, dd, a, label):not(.btn *):not(svg *) {
   color: #000 !important;
   -webkit-text-fill-color: #000 !important;
 }

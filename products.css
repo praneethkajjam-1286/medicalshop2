@@ -112,14 +112,6 @@
 .ph-tint { background: var(--alt-bg); transition: background .4s var(--ease); }
 .ph-head { text-align: center; max-width: 680px; margin: 0 auto 56px; }
 .ph-head p { color: var(--muted); font-size: 1.05rem; }
-.ph-label {
-  display: inline-block; margin-block-end: 14px; padding: 6px 14px 6px 12px;
-  border-inline-start: 3px solid var(--primary); border-radius: 4px;
-  background: color-mix(in srgb, var(--primary) 10%, transparent);
-  font-size: .78rem; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
-  color: var(--primary-deep);
-}
-[data-theme="dark"] .ph-label { border-color: var(--secondary-text); background: color-mix(in srgb, var(--primary) 10%, transparent); }
 .ph-h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); margin-block-end: 16px; }
 .ph-price { font-weight: 800; font-size: 1.12rem; color: var(--primary-deep); }
 .ph-price s { font-weight: 500; font-size: .88rem; color: var(--muted); margin-inline-start: 6px; }
@@ -235,15 +227,6 @@
 .ph-hero-perks li { display: inline-flex; align-items: center; gap: 6px; }
 .ph-hero-perks svg { color: var(--primary-text); }
 [data-theme="dark"] .ph-hero-perks svg { color: var(--secondary-text); }
-
-.ph-scroll {
-  position: absolute; inset-block-end: 22px; inset-inline-start: 50%; translate: -50% 0;
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
-}
-[dir="rtl"] .ph-scroll { translate: 50% 0; }
-.ph-scroll i { width: 2px; height: 40px; background: var(--line); position: relative; overflow: hidden; border-radius: 2px; }
-.ph-scroll i::after { content: ""; position: absolute; inset-inline: 0; top: -40%; height: 40%; background: var(--primary); animation: phLine 1.8s ease-in-out infinite; }
 
 /* =========================================================
    2. CATEGORIES – bento grid
@@ -510,7 +493,6 @@
 @keyframes phDrift { from { translate: 0 0; } to { translate: 0 -22%; } }
 @keyframes phBreathe { 0%, 100% { scale: 1; opacity: .9; } 50% { scale: 1.12; opacity: .6; } }
 @keyframes phPing { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 60%, transparent); } 80%, 100% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--primary) 0%, transparent); } }
-@keyframes phLine { 0% { top: -40%; } 100% { top: 100%; } }
 @keyframes phPop { from { opacity: 0; transform: translateY(24px) scale(.94); } to { opacity: 1; transform: none; } }
 @keyframes phHeart { 0% { transform: scale(1); } 40% { transform: scale(1.4); } 100% { transform: scale(1); } }
 @keyframes phBump { 0%, 100% { scale: 1; } 40% { scale: 1.25; } }
@@ -531,7 +513,6 @@
 @media (max-width: 1000px) {
   .ph-hero { grid-template-columns: minmax(0, 1fr); align-content: center; gap: 0; padding-block-end: 30px; }
   .ph-hero > * { min-width: 0; }
-  .ph-scroll { display: none; }
   .ph-col-a { display: none; }
   .ph-col-b {
     order: 2; height: auto; perspective: none;

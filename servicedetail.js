@@ -3,7 +3,7 @@
    One reusable page, six service views.
    1. Reads ?service=<id> with URLSearchParams
    2. Finds the matching entry in SERVICES
-   3. Renders ONLY that service (title, breadcrumb, hero, about,
+   3. Renders ONLY that service (title, hero, about,
       benefits, pricing, FAQs, CTA, <title> and meta description)
    4. Unknown / missing id  ->  "Service Not Found" view
    Shared header/footer behaviour uses the same localStorage keys
@@ -80,7 +80,6 @@ const SERVICES = {
   /* ---------------------------------------------------------- */
   "prescription-medicines": {
     title: "Prescription Medicines",
-    crumb: "Prescription Medicines",
     badge: "Rx Care",
     icon: "sd-shield",
     hero: {
@@ -134,7 +133,6 @@ const SERVICES = {
   /* ---------------------------------------------------------- */
   "otc-medicines": {
     title: "OTC Medicines & Healthcare",
-    crumb: "OTC Medicines",
     badge: "Everyday Care",
     icon: "sd-heart",
     hero: {
@@ -188,7 +186,6 @@ const SERVICES = {
   /* ---------------------------------------------------------- */
   "vitamins-supplements": {
     title: "Vitamins & Supplements",
-    crumb: "Vitamins & Supplements",
     badge: "Nutrition",
     icon: "sd-leaf",
     hero: {
@@ -242,7 +239,6 @@ const SERVICES = {
   /* ---------------------------------------------------------- */
   "personal-care": {
     title: "Personal Care & Wellness",
-    crumb: "Personal Care",
     badge: "Self-Care",
     icon: "sd-drop",
     hero: {
@@ -296,7 +292,6 @@ const SERVICES = {
   /* ---------------------------------------------------------- */
   "medical-devices": {
     title: "Medical Devices & Equipment",
-    crumb: "Medical Devices",
     badge: "Home Monitoring",
     icon: "sd-pulse",
     hero: {
@@ -350,7 +345,6 @@ const SERVICES = {
   /* ---------------------------------------------------------- */
   "health-consultation": {
     title: "Health Consultation & Guidance",
-    crumb: "Health Consultation",
     badge: "Guidance",
     icon: "sd-chat",
     hero: {
@@ -532,7 +526,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       heroImg.classList.add("img-fallback");
     }
-    $("sdCrumb").textContent = s.crumb;
     $("sdBadge").textContent = s.badge;
     $("sdTitle").textContent = s.title;
     $("sdHeroText").textContent = s.hero.text;

@@ -134,18 +134,6 @@ a:hover > .sd-back-ic { transform: translateX(-4px); }
 .sd-hero-inner { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 60px; align-items: center; }
 .sd-hero-inner > * { min-width: 0; }
 
-.sd-crumbs { margin-block-end: 22px; }
-.sd-crumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: .9rem; }
-.sd-crumbs li { display: inline-flex; align-items: center; gap: 6px; color: color-mix(in srgb, var(--footer-text) 75%, transparent); }
-.sd-crumbs li + li::before {
-  content: ""; width: 7px; height: 7px; border-top: 2px solid currentColor; border-inline-end: 2px solid currentColor;
-  transform: rotate(45deg); margin-inline-end: 4px; opacity: .7;
-}
-[dir="rtl"] .sd-crumbs li + li::before { transform: rotate(-45deg); }
-.sd-crumbs a { color: color-mix(in srgb, var(--footer-text) 85%, transparent); border-bottom: 1px solid transparent; transition: color .3s, border-color .3s; }
-.sd-crumbs a:hover, .sd-crumbs a:focus-visible { color: var(--footer-accent); border-color: var(--footer-accent); }
-.sd-crumbs [aria-current] { color: var(--footer-accent); font-weight: 700; }
-
 .sd-hero .eyebrow { background: color-mix(in srgb, var(--bg-secondary) 14%, transparent); color: var(--panel-text); border-color: color-mix(in srgb, var(--bg-secondary) 35%, transparent); }
 .sd-hero-title { font-size: clamp(2.4rem, 5.2vw, 4.3rem); font-weight: 700; line-height: 1.08; margin-block-end: 20px; color: var(--panel-text); }
 .sd-hero-text { font-size: 1.12rem; max-width: 600px; color: color-mix(in srgb, var(--footer-text) 88%, transparent); margin-block-end: 32px; }
@@ -372,6 +360,7 @@ a:hover > .sd-back-ic { transform: translateX(-4px); }
 .sd-cta-icon { width: 60px; height: 60px; border-radius: 18px; display: grid; place-items: center; background: var(--secondary); color: var(--on-secondary); margin-block-end: 22px; animation: sdBob 4s ease-in-out infinite; }
 .sd-cta h2 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); color: var(--panel-text); margin-block-end: 12px; }
 .sd-cta p { color: color-mix(in srgb, var(--footer-text) 88%, transparent); margin-block-end: 26px; }
+.sd-cta-actions { display: grid; gap: 12px; }
 .sd-cta .btn { width: 100%; justify-content: center; }
 .sd-cta-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: var(--panel-text); font-weight: 700; font-size: .92rem; }
 

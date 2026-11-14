@@ -79,6 +79,8 @@
   --ctl-h: clamp(44px, 6.2vh, 52px);     /* inputs, social buttons and CTA share one height */
   --gap: clamp(8px, 1.4vh, 13px);
   --radius-ctl: 14px;
+  --section-line-width: 1px;
+  --section-line: linear-gradient(90deg, transparent 0%, #174F46 18%, var(--primary) 50%, #174F46 82%, transparent 100%);
 }
 
 @property --angle {
@@ -199,7 +201,7 @@ input { font: inherit; color: inherit; }
   position: relative; isolation: isolate;
   padding: clamp(20px, 3.4vh, 32px) clamp(20px, 4.6vw, 34px) clamp(18px, 3vh, 28px);
   border-radius: 28px;
-  background: var(--card-glass);
+  background: var(--section-line) top / 100% var(--section-line-width) no-repeat, var(--card-glass);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   backdrop-filter: blur(18px) saturate(150%);
   box-shadow: var(--shadow-lg), inset 0 0 0 1px color-mix(in srgb, var(--primary) 22%, transparent);
@@ -251,6 +253,28 @@ input { font: inherit; color: inherit; }
 .auth-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .auth-brand-name { font-family: var(--font-head); font-size: 1.45rem; font-weight: 700; color: var(--heading); letter-spacing: .4px; }
 .auth-brand-tag { font-size: .72rem; color: var(--text-muted); margin-block-start: 3px; }
+
+/* Match the main site header branding on the login page only. */
+.auth-login { --auth-brand-logo-h: 52px; }
+.auth-login .auth-brand { gap: .7rem; }
+.auth-login .auth-logo {
+  width: auto; height: calc(var(--auth-brand-logo-h) + 8px); aspect-ratio: auto;
+  padding: 4px 6px; border-radius: 12px; display: inline-flex;
+  align-items: center; justify-content: center;
+  background: none; box-shadow: none; animation: none;
+}
+.auth-login .auth-logo img {
+  display: block; width: auto; height: var(--auth-brand-logo-h);
+  aspect-ratio: 1 / 1; object-fit: contain;
+}
+.auth-login .auth-logo::after { display: none; }
+.auth-login .auth-brand-name {
+  font-size: 1.6rem; font-weight: 700; color: var(--heading); letter-spacing: .5px;
+}
+.auth-login .auth-brand-tag {
+  display: block; font-size: .72rem; color: var(--text-muted);
+  letter-spacing: .3px; margin-block-start: 3px;
+}
 
 .auth-title {
   font-family: var(--font-head); font-weight: 600; color: var(--heading);
@@ -540,15 +564,34 @@ input { font: inherit; color: inherit; }
 }
 
 /* ---------- 14. Small widths ---------- */
+@media (max-width: 1180px) {
+  .auth-login { --auth-brand-logo-h: 44px; }
+}
+@media (max-width: 600px) {
+  .auth-login { --auth-brand-logo-h: 40px; }
+  .auth-login .auth-brand { gap: 8px; }
+  .auth-login .auth-brand-name { font-size: 1.3rem; }
+  .auth-login .auth-brand-tag { font-size: .56rem; }
+}
 @media (max-width: 640px) {
   .auth-stage { --reserve: 86px; --shift: 27px; }   /* keep clear of the corner buttons */
 }
 @media (max-width: 420px) {
+  .auth-login .auth-brand-text { min-width: 0; }
+  .auth-login .auth-brand-tag { max-width: 112px; line-height: 1.25; }
   .auth-back span { display: none; }
   .auth-back { width: 42px; padding: 0; justify-content: center; }
   .auth-card { border-radius: 24px; }
   .social-btn { font-size: .86rem; gap: 8px; }
   .form-row { font-size: .82rem; }
+}
+@media (max-width: 380px) {
+  .auth-login .auth-brand-name { font-size: 1.15rem; }
+}
+@media (max-width: 340px) {
+  .auth-login { --auth-brand-logo-h: 32px; }
+  .auth-login .auth-brand { gap: 4px; }
+  .auth-login .auth-brand-name { font-size: .95rem; }
 }
 
 /* ---------- 15. Reduced motion ---------- */
